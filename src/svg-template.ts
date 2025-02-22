@@ -38,150 +38,24 @@ export default function createSVGfromTemplate({
       <filter id="dropShadow" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="270" width="270">
         <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.225" width="200%" height="200%"/>
       </filter>
-    </defs>
+    </defs> 
     
-    <path fill="#ffffff" d="M 0 0 L 6.496094 0 L 6.496094 36.996094 L 0 36.996094 Z M 0 0 " fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(34.5,32.5)" />  
-    <path fill="#ffffff" d="M 30.535156 0 L 37.007812 0 L 37.007812 37.003906 L 30.535156 37.003906 Z M 30.535156 0 " fill-opacity="1" fill-rule="red" transform="translate(42.5,32.5)" />  
-    <path fill="#ffffff" d="M 0 0 L 13.875 0 L 13.875 6.46875 L 0 6.46875 Z M 0 0 "  fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(38.5,32.5)" />  
-    <path fill="#ffffff" d="M 23.128906 0 L 37.003906 0 L 37.003906 6.46875 L 23.128906 6.46875 Z M 23.128906 0 " fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(38.5,32.5)" />  
-    <path fill="#ffffff" d="M 0 30.535156 L 13.875 30.535156 L 13.875 37.007812 L 0 37.007812 Z M 0 30.535156 " fill-opacity="1" fill-rule="red"  filter="url(#dropShadow)" transform="translate(37.5,32.5)" />  
-    <path fill="#ffffff" d="M 23.128906 30.535156 L 37.003906 30.535156 L 37.003906 37.007812 L 23.128906 37.007812 Z M 23.128906 30.535156 " fill-opacity="1" fill-rule="red" transform="translate(38.5,32.5)" filter="url(#dropShadow)" /> 
-     
+    <path fill="#ffffff" d="M 0 0 L 6.496094 0 L 6.496094 36.996094 L 0 36.996094 Z M 0 0 " fill-opacity="1" fill-rule="red" transform="translate(22,32.5)" />  
+    <path fill="#ffffff" d="M 30.535156 0 L 37.007812 0 L 37.007812 37.003906 L 30.535156 37.003906 Z M 30.535156 0 " fill-opacity="1" fill-rule="red" transform="translate(22,32.5)" />  
+    <path fill="#ffffff" d="M 0 0 L 13.875 0 L 13.875 6.46875 L 0 6.46875 Z M 0 0 "  fill-opacity="1" fill-rule="red" transform="translate(22,32.5)" />  
+    <path fill="#ffffff" d="M 23.128906 0 L 37.003906 0 L 37.003906 6.46875 L 23.128906 6.46875 Z M 23.128906 0 " fill-opacity="1" fill-rule="red"  transform="translate(22,32.5)" />  
+    <path fill="#ffffff" d="M 0 30.535156 L 13.875 30.535156 L 13.875 37.007812 L 0 37.007812 Z M 0 30.535156 " fill-opacity="1" fill-rule="red"  transform="translate(22,32.5)" />  
+    <path fill="#ffffff" d="M 23.128906 30.535156 L 37.003906 30.535156 L 37.003906 37.007812 L 23.128906 37.007812 Z M 23.128906 30.535156 " fill-opacity="1" fill-rule="red" transform="translate(22,32.5)" /> 
 
-    <g transform="translate(0 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 0, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:1;animation-play-state:paused;animation-delay:-7.35409s" >M</text></g>
-<g transform="translate(0 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 0, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.9;animation-play-state:paused;animation-delay:-6.90161s" >O</text></g>
-<g transform="translate(0 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 0, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.8;animation-play-state:paused;animation-delay:-5.99663s" >N</text></g>
-<g transform="translate(0 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 0, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.7;animation-play-state:paused;animation-delay:-5.54414s" >A</text></g>
-<g transform="translate(0 1 37.84615384615387)" style="transform:matrix(1, 0, 0, 1, 0, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.6;animation-play-state:paused;animation-delay:-5.09165s" >D</text></g>
-<g transform="translate(0 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 0, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.5;animation-play-state:paused;animation-delay:-4.63916s" >n</text></g>
-<g transform="translate(0 196.92307692307693)" style="transform:matrix(1, 0, 0, 1, 0, 196.923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.4;animation-play-state:paused;animation-delay:-3.73418s" >a</text></g>
-<g transform="translate(0 216.61538461538464)" style="transform:matrix(1, 0, 0, 1, 0, 216.615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.2;animation-play-state:paused;animation-delay:-3.2817s" >M</text></g>
-<g transform="translate(0 236.30769230769232)" style="transform:matrix(1, 0, 0, 1, 0, 236.308);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-2.82921s" >E</text></g>
-
-
-<g transform="translate(19.692307692307693 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 19.6923, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.4194s" >D</text></g>
-<g transform="translate(19.692307692307693 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 19.6923, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.96691s" >o</text></g>
-<g transform="translate(19.692307692307693 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 19.6923, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.51442s" >m</text></g>
-<g transform="translate(19.692307692307693 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 19.6923, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.06193s" >i</text></g>
-<g transform="translate(19.692307692307693 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 19.6923, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.090988;animation-play-state:paused;animation-delay:-8.60944s" >n</text></g>
-<g transform="translate(19.692307692307693 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 19.6923, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.283296;animation-play-state:paused;animation-delay:-8.15695s" >s</text></g>
-<g transform="translate(19.692307692307693 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 19.6923, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.475605;animation-play-state:paused;animation-delay:-7.70446s" >M</text></g>
-<g transform="translate(19.692307692307693 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 19.6923, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.667908;animation-play-state:paused;animation-delay:-7.25198s" >O</text></g>
- 
-<g transform="translate(39.38461538461539 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 39.3846, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-11.0916s" >N</text></g>
-<g transform="translate(39.38461538461539 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 39.3846, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.6391s" >A</text></g>
-<g transform="translate(39.38461538461539 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 39.3846, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.1867s" >D</text></g>
-<g transform="translate(39.38461538461539 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 39.3846, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.73417s" >N</text></g>
-<g transform="translate(39.38461538461539 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 39.3846, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.28168s" >A</text></g>
-<g transform="translate(39.38461538461539 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 39.3846, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-8.82919s" >M</text></g>
-<g transform="translate(39.38461538461539 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 39.3846, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.189902;animation-play-state:paused;animation-delay:-8.3767s" >E</text></g>
-<g transform="translate(39.38461538461539 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 39.3846, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.382206;animation-play-state:paused;animation-delay:-7.92422s" >m</text></g>
-<g transform="translate(39.38461538461539 177.23076923076923)" style="transform:matrix(1, 0, 0, 1, 39.3846, 177.231);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.574515;animation-play-state:paused;animation-delay:-7.47173s" >o</text></g>
- 
-<g transform="translate(59.07692307692308 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 59.0769, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.0241s" >N</text></g>
-<g transform="translate(59.07692307692308 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 59.0769, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.57159s" >D</text></g>
-<g transform="translate(59.07692307692308 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 59.0769, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.1191s" >O</text></g>
-<g transform="translate(59.07692307692308 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 59.0769, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.0666908;animation-play-state:paused;animation-delay:-8.66661s" >M</text></g>
-<g transform="translate(59.07692307692308 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 59.0769, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.258995;animation-play-state:paused;animation-delay:-8.21413s" >a</text></g>
-<g transform="translate(59.07692307692308 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 59.0769, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.451303;animation-play-state:paused;animation-delay:-7.76164s" >I</text></g>
-<g transform="translate(59.07692307692308 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 59.0769, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.643611;animation-play-state:paused;animation-delay:-7.30915s" >N</text></g>
-<g transform="translate(59.07692307692308 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 59.0769, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.835919;animation-play-state:paused;animation-delay:-6.85666s" >i</text></g>
-<g transform="translate(59.07692307692308 177.23076923076923)" style="transform:matrix(1, 0, 0, 1, 59.0769, 177.231);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);animation-play-state:paused;animation-delay:-6.40417s" >i</text></g>
- 
-<g transform="translate(78.76923076923077 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 78.7692, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.447s" >o</text></g>
-<g transform="translate(78.76923076923077 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 78.7692, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.99448s" >n</text></g>
-<g transform="translate(78.76923076923077 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 78.7692, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.542s" >i</text></g>
-<g transform="translate(78.76923076923077 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 78.7692, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.08951s" >o</text></g>
-<g transform="translate(78.76923076923077 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 78.7692, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.0792665;animation-play-state:paused;animation-delay:-8.63702s" >a</text></g>
-<g transform="translate(78.76923076923077 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 78.7692, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.271575;animation-play-state:paused;animation-delay:-8.18453s" >i</text></g>
-<g transform="translate(78.76923076923077 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 78.7692, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.463883;animation-play-state:paused;animation-delay:-7.73204s" >m</text></g>
-<g transform="translate(78.76923076923077 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 78.7692, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.656191;animation-play-state:paused;animation-delay:-7.27955s" >a</text></g>
-<g transform="translate(78.76923076923077 177.23076923076923)" style="transform:matrix(1, 0, 0, 1, 78.7692, 177.231);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.848499;animation-play-state:paused;animation-delay:-6.82706s" >n</text></g>
- 
-<g transform="translate(98.46153846153847 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 98.4615, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.0416158;animation-play-state:paused;animation-delay:-8.72561s" >i</text></g>
-<g transform="translate(98.46153846153847 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 98.4615, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.233924;animation-play-state:paused;animation-delay:-8.27312s" >F</text></g>
-<g transform="translate(98.46153846153847 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 98.4615, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.426232;animation-play-state:paused;animation-delay:-7.82063s" >K</text></g>
-<g transform="translate(98.46153846153847 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 98.4615, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.618541;animation-play-state:paused;animation-delay:-7.36814s" >F</text></g>
-<g transform="translate(98.46153846153847 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 98.4615, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.6;animation-play-state:paused;animation-delay:-6.91565s" >r</text></g>
-<g transform="translate(98.46153846153847 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 98.4615, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);animation-play-state:paused;animation-delay:-6.46316s" >i</text></g>
-<g transform="translate(98.46153846153847 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 98.4615, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);animation-play-state:paused;animation-delay:-6.01068s" >i</text></g>
-<g transform="translate(98.46153846153847 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 98.4615, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-5.55819s" >K</text></g>
- 
-<g transform="translate(98.46153846153847 256)" style="transform:matrix(1, 0, 0, 1, 98.4615, 256);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-3.29574s" >r</text></g>
-<g transform="translate(118.15384615384616 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 118.154, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-6.76841s" >M</text></g>
-<g transform="translate(118.15384615384616 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 118.154, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-6.31592s" >O</text></g>
-<g transform="translate(118.15384615384616 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 118.154, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-5.86343s" >N</text></g>
-<g transform="translate(118.15384615384616 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 118.154, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-5.41094s" >A</text></g>
-<g transform="translate(118.15384615384616 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 118.154, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-4.95846s" >D</text></g>
-<g transform="translate(118.15384615384616 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 118.154, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-4.50597s" >d</text></g>
-<g transform="translate(118.15384615384616 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 118.154, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-4.05348s" >O</text></g>
-<g transform="translate(118.15384615384616 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 118.154, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-3.60099s" >M</text></g>
-<g transform="translate(118.15384615384616 177.23076923076923)" style="transform:matrix(1, 0, 0, 1, 118.154, 177.231);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-3.1485s" >a</text></g>
-
-
-<g transform="translate(137.84615384615387 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 137.846, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-11.3801s" >i</text></g>
-<g transform="translate(137.84615384615387 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 137.846, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.9277s" >n</text></g>
-<g transform="translate(137.84615384615387 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 137.846, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.4752s" >s</text></g>
-<g transform="translate(137.84615384615387 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 137.846, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.0227s" >m</text></g>
-<g transform="translate(137.84615384615387 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 137.846, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.57019s" >o</text></g>
-<g transform="translate(137.84615384615387 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 137.846, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.1177s" >o</text></g>
-<g transform="translate(137.84615384615387 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 137.846, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.0672857;animation-play-state:paused;animation-delay:-8.66521s" >n</text></g>
-<g transform="translate(137.84615384615387 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 137.846, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-8.21272s" >n</text></g>
-<g transform="translate(137.84615384615387 177.23076923076923)" style="transform:matrix(1, 0, 0, 1, 137.846, 177.231);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.2;animation-play-state:paused;animation-delay:-7.76024s" >a</text></g>
-
-
-<g transform="translate(157.53846153846155 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 157.538, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.514925;animation-play-state:paused;animation-delay:-7.61194s" >M</text></g>
-<g transform="translate(157.53846153846155 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 157.538, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.5;animation-play-state:paused;animation-delay:-7.15946s" >E</text></g>
-<g transform="translate(157.53846153846155 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 157.538, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.6;animation-play-state:paused;animation-delay:-6.70697s" >.</text></g>
-<g transform="translate(157.53846153846155 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 157.538, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);animation-play-state:paused;animation-delay:-6.25448s" >M</text></g>
-<g transform="translate(157.53846153846155 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 157.538, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-5.80199s" >O</text></g>
-<g transform="translate(157.53846153846155 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 157.538, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-5.3495s" >N</text></g>
-<g transform="translate(157.53846153846155 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 157.538, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-4.89701s" >A</text></g>
-<g transform="translate(157.53846153846155 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 157.538, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-4.44452s" >D</text></g>
-<g transform="translate(157.53846153846155 177.23076923076923)" style="transform:matrix(1, 0, 0, 1, 157.538, 177.231);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-3.99204s" >N</text></g>
-
-
-<g transform="translate(177.23076923076923 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 177.231, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-11.1214s" >A</text></g>
-<g transform="translate(177.23076923076923 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 177.231, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.6689s" >M</text></g>
-<g transform="translate(177.23076923076923 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 177.231, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.2164s" >e</text></g>
-<g transform="translate(177.23076923076923 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 177.231, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.76389s" >S</text></g>
-<g transform="translate(177.23076923076923 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 177.231, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.31141s" >e</text></g>
-<g transform="translate(177.23076923076923 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 177.231, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-8.85892s" >r</text></g>
-<g transform="translate(177.23076923076923 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 177.231, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.05;animation-play-state:paused;animation-delay:-8.40643s" >v</text></g>
-<g transform="translate(177.23076923076923 157.53846153846155)" style="transform:matrix(1, 0, 0, 1, 177.231, 157.538);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-7.95394s" >i</text></g>
-<g transform="translate(177.23076923076923 177.23076923076923)" style="transform:matrix(1, 0, 0, 1, 177.231, 177.231);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.3;animation-play-state:paused;animation-delay:-7.50145s" >c</text></g>
-
-
-<g transform="translate(196.92307692307693 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 196.923, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.6761s" >e</text></g>
-<g transform="translate(196.92307692307693 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 196.923, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-10.2236s" >a</text></g>
-<g transform="translate(196.92307692307693 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 196.923, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.77113s" >i</text></g>
-<g transform="translate(196.92307692307693 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 196.923, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.31865s" >s</text></g>
-<g transform="translate(196.92307692307693 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 196.923, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-8.86616s" >o</text></g>
-<g transform="translate(196.92307692307693 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 196.923, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.05;animation-play-state:paused;animation-delay:-8.41367s" >i</text></g>
-<g transform="translate(196.92307692307693 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 196.923, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-7.96118s" >o</text></g>
-
-
-<g transform="translate(216.61538461538464 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 216.615, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.72178s" >r</text></g>
-<g transform="translate(216.61538461538464 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 216.615, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-9.26929s" >F</text></g>
-<g transform="translate(216.61538461538464 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 216.615, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.00286;animation-play-state:paused;animation-delay:-8.8168s" >a</text></g>
-<g transform="translate(216.61538461538464 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 216.615, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.05;animation-play-state:paused;animation-delay:-8.36431s" >a</text></g>
-<g transform="translate(216.61538461538464 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 216.615, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-7.91182s" >a</text></g>
-<g transform="translate(216.61538461538464 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 216.615, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.3;animation-play-state:paused;animation-delay:-7.45933s" >M</text></g>
-<g transform="translate(216.61538461538464 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 216.615, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.5;animation-play-state:paused;animation-delay:-7.00684s" >O</text></g>
-
-
-<g transform="translate(236.30769230769232 19.692307692307693)" style="transform:matrix(1, 0, 0, 1, 236.308, 19.6923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:1;animation-play-state:paused;animation-delay:-7.08735s" >D</text></g>
-<g transform="translate(236.30769230769232 39.38461538461539)" style="transform:matrix(1, 0, 0, 1, 236.308, 39.3846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.9;animation-play-state:paused;animation-delay:-6.63486s" >O</text></g>
-<g transform="translate(236.30769230769232 59.07692307692308)" style="transform:matrix(1, 0, 0, 1, 236.308, 59.0769);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.8;animation-play-state:paused;animation-delay:-6.18238s" >M</text></g>
-<g transform="translate(236.30769230769232 78.76923076923077)" style="transform:matrix(1, 0, 0, 1, 236.308, 78.7692);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.7;animation-play-state:paused;animation-delay:-5.72989s" >A</text></g>
-<g transform="translate(236.30769230769232 98.46153846153847)" style="transform:matrix(1, 0, 0, 1, 236.308, 98.4615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.6;animation-play-state:paused;animation-delay:-5.2774s" >I</text></g>
-<g transform="translate(236.30769230769232 118.15384615384616)" style="transform:matrix(1, 0, 0, 1, 236.308, 118.154);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.5;animation-play-state:paused;animation-delay:-4.82491s" >N</text></g>
-<g transform="translate(236.30769230769232 137.84615384615387)" style="transform:matrix(1, 0, 0, 1, 236.308, 137.846);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.4;animation-play-state:paused;animation-delay:-4.37242s" >S</text></g>
-
-<g transform="translate(236.30769230769232 196.92307692307693)" style="transform:matrix(1, 0, 0, 1, 236.308, 196.923);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-3.01495s" >a</text></g>
-<g transform="translate(236.30769230769232 216.61538461538464)" style="transform:matrix(1, 0, 0, 1, 236.308, 216.615);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-2.56247s" >r</text></g>
-<g transform="translate(236.30769230769232 236.30769230769232)" style="transform:matrix(1, 0, 0, 1, 236.308, 236.308);animation-play-state:paused" ><text fill="#ffffff" style="transform:matrix(0.7, 0, 0, 1, 0, 0);opacity:0.1;animation-play-state:paused;animation-delay:-2.10998s" >r</text></g>
-
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="247" height="243" x="5%" y="5%"
+    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g>
+        <path style="opacity:0.05" fill="#fefffe"
+            d="M 114.5,-0.5 C 119.5,-0.5 124.5,-0.5 129.5,-0.5C 143.144,4.82498 155.81,11.9916 167.5,21C 193.919,41.4127 216.086,65.5794 234,93.5C 239.372,101.952 242.539,111.119 243.5,121C 242.539,130.881 239.372,140.048 234,148.5C 210.742,184.425 180.908,213.592 144.5,236C 139.41,238.218 134.41,240.384 129.5,242.5C 124.5,242.5 119.5,242.5 114.5,242.5C 101.12,237.635 88.7869,230.802 77.5,222C 50.4165,200.923 27.5832,176.09 9,147.5C 4.36863,139.931 1.20196,131.931 -0.5,123.5C -0.5,121.833 -0.5,120.167 -0.5,118.5C 3.21155,104.741 9.37822,92.0747 18,80.5C 39.7059,51.7899 65.5392,27.6233 95.5,8C 101.697,4.56207 108.031,1.72874 114.5,-0.5 Z M 135.5,51.5 C 138.794,51.259 141.794,52.0924 144.5,54C 167.024,77.8723 182.691,105.706 191.5,137.5C 189.206,143.304 185.539,148.138 180.5,152C 158.789,168.857 134.789,181.524 108.5,190C 105.217,190.743 102.217,190.076 99.5,188C 81.2034,168.598 67.0368,146.431 57,121.5C 54.0661,115.106 52.7327,108.44 53,101.5C 61.9857,90.8461 72.4857,82.0128 84.5,75C 100.597,64.9477 117.597,57.1144 135.5,51.5 Z" />
+    </g>
+</svg>
+  
     ${
       isNormalized
         ? ''
@@ -193,7 +67,7 @@ export default function createSVGfromTemplate({
     }
     ${subdomainText || ''}
     <text
-      x="32.5"
+      x="22"
       y="231"
       font-size="${domainFontSize}px"
       ${isSubdomain ? 'opacity="0.4"' : ''}
@@ -223,11 +97,11 @@ export default function createSVGfromTemplate({
       <linearGradient id="paint0_linear" x1="190.5" y1="302" x2="-64" y2="-172.5" gradientUnits="userSpaceOnUse">
       ${
         version !== Version.v1w
-          ? `<stop stop-color="#6e54ff"/>
-          <stop offset="0.428185" stop-color="#6e54ff"/>
-          <stop offset="1" stop-color="#6e54ff"/>`
-          : `<stop stop-color="#6e54ff"/>
-        <stop offset="1" stop-color="#6e54ff"/>`
+          ? `<stop stop-color="#836EF9"/>
+          <stop offset="0.428185" stop-color="#916ff7"/>
+          <stop offset="1" stop-color="#836EF9"/>`
+          : `<stop stop-color="#836EF9"/>
+        <stop offset="1" stop-color="#836EF9"/>`
       }
       </linearGradient>
       <linearGradient id="paint1_linear" x1="0" y1="0" x2="269.553" y2="285.527" gradientUnits="userSpaceOnUse">
