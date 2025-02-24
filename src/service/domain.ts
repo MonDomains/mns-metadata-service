@@ -15,6 +15,7 @@ import { NetworkName }    from './network';
 
 import { getNamehash }    from '../utils/getNamehash';
 
+
 const mon =
   '0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae';
 const GRACE_PERIOD_MS = 7776000000; // 90 days as milliseconds
@@ -117,6 +118,33 @@ export async function getDomain(
     }
   }
  
+    
+  //const isAvatarExist = resolver?.texts && resolver.texts.includes('avatar');
+  await Promise.all([requestMedia(false)]);
+  return metadata;
+}
+
+export async function getDomainTemp(
+  label: string
+): Promise<Metadata> {
+
+  const version = Version.v1;
+
+  
+  const metadata = new Metadata({
+    name: label,
+    created_date: 13213123123,
+    tokenId: "0x0",
+    version,
+  });
+
+
+  
+  async function requestMedia(isAvatarExist: boolean) {
+    metadata.generateImage();
+  }
+ 
+  
     
   //const isAvatarExist = resolver?.texts && resolver.texts.includes('avatar');
   await Promise.all([requestMedia(false)]);

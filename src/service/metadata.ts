@@ -60,6 +60,7 @@ export class Metadata {
     version,
     last_request_date,
   }: MetadataInit) {
+
     const label = this.getLabel(name);
     this.is_normalized = this._checkNormalized(name);
     this.name = this.formatName(name, tokenId);
