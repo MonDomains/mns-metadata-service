@@ -93,7 +93,7 @@ export async function ensMetadata(req: Request, res: Response) {
 
       // When entry is not available on subgraph yet,
       // return unknown name metadata with 200 status code
-      const { url, ...unknownMetadata } = new Metadata({
+      const { external_url, ...unknownMetadata } = new Metadata({
         name: 'unknown.name',
         description: 'Unknown MNS name',
         created_date: 1580346653000,

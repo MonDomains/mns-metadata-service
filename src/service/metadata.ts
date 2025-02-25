@@ -43,7 +43,7 @@ export interface Metadata {
   is_normalized      : boolean;
   background_image?  : string;
   mimeType?          : string;
-  url?               : string | null;
+  external_url?               : string | null;
   version            : Version;
   last_request_date? : number;
 }
@@ -66,7 +66,7 @@ export class Metadata {
     this.name = this.formatName(name, tokenId);
     this.description = this.formatDescription(name, description);
     this.attributes = this.initializeAttributes(created_date, label);
-    this.url = this.is_normalized
+    this.external_url = this.is_normalized
       ? `https://app.monadns.com/name/${name}`
       : null;
     this.last_request_date = last_request_date;
