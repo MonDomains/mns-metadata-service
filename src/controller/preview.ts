@@ -23,7 +23,7 @@ export async function preview(req: Request, res: Response) {
       tokenId: '0',
       version: Version.v2,
     });
-    metadata.generateImage();
+    metadata.generateImage(270, 270);
 
     if (metadata.image) {
       const base64 = metadata.image.replace('data:image/svg+xml;base64,', '');
