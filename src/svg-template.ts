@@ -151,22 +151,22 @@ export function createCardSVGfromTemplate({
       y="30" 
       font-size="1em"
       fill="white"
-      filter="url(#dropShadow)"> Monad${""} </text>
+      filter="url(#dropShadow)"> ${"Monad"} </text>
   <text
-      x="400" 
+      x="420" 
       y="250" 
       font-size="4.1em"
       font-weight="bold"
       fill="white"
       filter="url(#dropShadow)">${obscureName(domain.split(".").shift() || "", 20)}.mon</text>
   <text
-      x="400" 
+      x="420" 
       y="350" 
       font-size="1.5em"
       fill="white"
       filter="url(#dropShadow)">Minted: ${new Date(Number(registered) * 1000).toLocaleString("en-US", { month: 'long', day: 'numeric', year: 'numeric' } )} </text>
   <text
-      x="400" 
+      x="420" 
       y="400" 
       font-size="1.5em"
       fill="white"
