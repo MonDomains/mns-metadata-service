@@ -9,7 +9,7 @@ import {
   CANVAS_FONT_PATH,
   CANVAS_EMOJI_FONT_PATH,
 }                                               from '../config';
-import createSVGfromTemplate                    from '../svg-template';
+import { createSVGfromTemplate, createCardSVGfromTemplate }  from '../svg-template';
 import base64EncodeUnicode                      from '../utils/base64encode';
 import { isASCII, findCharacterSet }            from '../utils/characterSet';
 import { getCodePointLength, getSegmentLength } from '../utils/charLength';
@@ -153,10 +153,11 @@ export class Metadata {
     }
   }
 
-  generateImage() {
+  generateImage(width: number, height: number) {
     const name = this.name;
     const labels = name.split('.');
     const isSubdomain = labels.length > 2;
+    
 
     const { domain, subdomainText } = this.processSubdomain(name, isSubdomain);
     const { processedDomain, domainFontSize } = this.processDomain(domain);
@@ -164,8 +165,27 @@ export class Metadata {
       domainFontSize,
       subdomainText,
       isSubdomain,
-      processedDomain
+      processedDomain,
+      width,
+      height
     );
+
+    try {
+      this.setImage('data:image/svg+xml;base64,' + base64EncodeUnicode(svg));
+    } catch (e) {
+      console.log(processedDomain, e);
+      this.setImage('');
+    }
+  }
+
+  generateCardImage(tokenId: string, createdAt: Date, expiryDate: Date) {
+    const name = this.name;
+    const labels = name.split('.');
+    const isSubdomain = labels.length > 2;
+     
+    const { domain, subdomainText } = this.processSubdomain(name, isSubdomain);
+    const { processedDomain, domainFontSize } = this.processDomain(domain);
+    const svg = this._renderCardSVG(domain, tokenId, createdAt,  expiryDate)
 
     try {
       this.setImage('data:image/svg+xml;base64,' + base64EncodeUnicode(svg));
@@ -234,9 +254,12 @@ export class Metadata {
       domainFontSize: number,
       subdomainText: string | undefined,
       isSubdomain: boolean,
-      domain: string
+      domain: string,
+      width: number,
+      height: number
     ]
   ): string {
+    console.log(args)
     if (!Object.values(Version).includes(this.version)) {
       throw Error(`Unknown Metadata version: ${this.version}`);
     }
@@ -298,8 +321,10 @@ export class Metadata {
     subdomainText: string | undefined,
     isSubdomain: boolean,
     domain: string,
+    width: number,
+    height: number,
     version: Version
-  ) {
+  ) { 
     return createSVGfromTemplate({
       backgroundImage: this.background_image,
       domain: domain.trim(),
@@ -309,6 +334,23 @@ export class Metadata {
       mimeType: this.mimeType,
       subdomainText,
       version,
+      width,
+      height
+    });
+  }
+
+  private _renderCardSVG(
+    domain: string,
+    tokenId: string,
+    registered: Date,
+    expired: Date
+  ) { 
+ 
+    return createCardSVGfromTemplate({
+      domain: domain.trim(),
+      tokenId: tokenId,
+      registered: registered,
+      expired: expired,
     });
   }
 }

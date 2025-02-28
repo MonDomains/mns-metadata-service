@@ -1,7 +1,7 @@
 import { Express } from 'express';
 
 import { ensMetadata } from './controller/ensMetadata';
-import { ensImage, ensImageTemp } from './controller/ensImage';
+import { ensCardImage, ensImage, ensImageTemp } from './controller/ensImage';
 import { ensRasterize } from './controller/ensRasterize';
 import { avatarMetadata } from './controller/avatarMetadata';
 import { avatarImage } from './controller/avatarImage';
@@ -27,6 +27,16 @@ export default function (app: Express) {
   app.get(
     '/temp-image/:label',
     ensImageTemp
+  );
+
+  app.get(
+    '/image/:label',
+    ensImageTemp
+  );
+
+  app.get(
+    '/:networkName/:contractAddress(0x[a-fA-F0-9]{40})/:tokenId/card',
+    ensCardImage
   );
 
   app.get(
