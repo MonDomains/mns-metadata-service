@@ -9,7 +9,7 @@ import {
   CANVAS_FONT_PATH,
   CANVAS_EMOJI_FONT_PATH,
 }                                               from '../config';
-import { createSVGfromTemplate, createCardSVGfromTemplate }  from '../svg-template';
+import { createSVGfromTemplate }  from '../svg-template';
 import base64EncodeUnicode                      from '../utils/base64encode';
 import { isASCII, findCharacterSet }            from '../utils/characterSet';
 import { getCodePointLength, getSegmentLength } from '../utils/charLength';
@@ -178,22 +178,7 @@ export class Metadata {
     }
   }
 
-  generateCardImage(tokenId: string, createdAt: Date, expiryDate: Date) {
-    const name = this.name;
-    const labels = name.split('.');
-    const isSubdomain = labels.length > 2;
-     
-    const { domain, subdomainText } = this.processSubdomain(name, isSubdomain);
-    const { processedDomain, domainFontSize } = this.processDomain(domain);
-    const svg = this._renderCardSVG(domain, tokenId, createdAt,  expiryDate)
-
-    try {
-      this.setImage('data:image/svg+xml;base64,' + base64EncodeUnicode(svg));
-    } catch (e) {
-      console.log(processedDomain, e);
-      this.setImage('');
-    }
-  }
+  
 
   processSubdomain(name: string, isSubdomain: boolean) {
     let subdomainText;
@@ -339,18 +324,4 @@ export class Metadata {
     });
   }
 
-  private _renderCardSVG(
-    domain: string,
-    tokenId: string,
-    registered: Date,
-    expired: Date
-  ) { 
- 
-    return createCardSVGfromTemplate({
-      domain: domain.trim(),
-      tokenId: tokenId,
-      registered: registered,
-      expired: expired,
-    });
-  }
 }
