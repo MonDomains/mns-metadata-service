@@ -119,6 +119,75 @@ export function createSVGfromTemplate({
           line-height: 34px;
         }
       </style>
+      ${ (domain.split(".").shift() || "").toString().length < 4 ? 
+        `<style type="text/css"> 
+            svg text {
+            animation: stroke 5s infinite alternate;
+            stroke-width: 1;
+            stroke: #c17efc;
+            fill: #b05cf9;
+        }
+
+        @keyframes stroke {
+            0% {
+                stroke: #8F7CF7;
+                fill: #ffffff;
+                stroke-dashoffset: 25%;
+                stroke-dasharray: 0 50%;
+                stroke-width: 0.8;
+            }
+
+            50% {
+                fill: #ffffff;
+                fill: #8F7CF7;
+            }
+
+            80% {
+                fill: rgba(255, 255, 255, 0.8); 
+                stroke: rgba(255, 255, 255, 1); 
+                stroke-width: 0.8;
+            }
+
+            100% {
+                fill: rgba(255, 255, 255, 1); 
+                stroke: rgba(255, 255, 255, 0);
+                stroke-dashoffset: -25%;
+                stroke-dasharray: 50% 0;
+                stroke-width: 0;
+            }
+        }
+
+    @keyframes ailogo {
+        0% {
+            fill: rgb(254, 217, 16);  
+            stroke: rgb(254, 217, 16);  
+            stroke-dashoffset: 25%;
+            stroke-dasharray: 0 50%;
+            stroke-width: 0.3;
+        }
+
+        50% {
+            fill: rgba(255, 255, 255, 0.5);
+            stroke: rgba(255, 255, 255, 1); 
+        }
+
+        80% {
+            fill: rgba(255, 255, 255, 0.8);
+            stroke: rgba(255, 255, 255, 1); 
+            stroke-width: 0.7;
+        }
+
+        100% {
+            fill: rgba(255, 255, 255, 1); 
+            stroke: rgba(255, 255, 255, 0);
+            stroke-dashoffset: -25%;
+            stroke-dasharray: 50% 0;
+            stroke-width: 0;
+        }
+    }
+        </style> `: ''
+    } 
+
       <linearGradient id="paint0_linear" x1="190.5" y1="302" x2="-64" y2="-172.5" gradientUnits="userSpaceOnUse">
       ${
         version !== Version.v1w
