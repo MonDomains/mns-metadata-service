@@ -8,7 +8,7 @@ import {
 }                                  from '../base';
 import { RESPONSE_TIMEOUT }        from '../config';
 import { checkContract }           from '../service/contract';
-import { getCardDomain, getDomain, getDomainTemp }               from '../service/domain';
+import { getDomain, getDomainTemp }               from '../service/domain';
 import getNetwork, { NetworkName } from '../service/network';
 
 /* istanbul ignore next */
