@@ -1,8 +1,11 @@
 import { Version } from "./base";
-import { CANVAS_FONT_PATH, CARD_CANVAS_FONT_PATH }  from './config';
+import { CANVAS_FONT_PATH, CANVAS_EMOJI_FONT_PATH, CANVAS_APPLE_EMOJI_FONT_PATH }  from './config';
 import { importFont } from "./utils/importFont";
 
- 
+const fontSatoshiBold = importFont(CANVAS_FONT_PATH, 'font/truetype'); 
+const notoColorEmoji = importFont(CANVAS_EMOJI_FONT_PATH, 'font/truetype'); 
+const appleColorEmoji = importFont(CANVAS_APPLE_EMOJI_FONT_PATH, 'font/truetype'); 
+
 export const obscureName = (name: string, len: number) => {
   if(getLength(name) > len) {
       return Array.from(name).slice(0, len / 2).join("") + "..." + Array.from(name).slice(name.length - (len / 2), name.length).join("");
@@ -92,6 +95,27 @@ export function createSVGfromTemplate({
     <defs>
        
       <style>
+        @font-face { 
+          font-family: "Satoshi Variable";
+          font-style: normal;
+          font-weight: 600 900;
+          src: url(${fontSatoshiBold});
+        }
+
+        @font-face { 
+          font-family: "Noto Color Emoji";
+          font-style: normal;
+          font-weight: 600 900;
+          src: url(${notoColorEmoji});
+        }
+
+        @font-face { 
+          font-family: "Apple Color Emoji";
+          font-style: normal;
+          font-weight: 600 900;
+          src: url(${appleColorEmoji});
+        }
+
         text {
           font-family: 'Satoshi Variable', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
           font-style: normal;
@@ -101,7 +125,6 @@ export function createSVGfromTemplate({
           font-variant-ligatures: none;
           font-feature-settings: "ss01" on, "ss03" on;
           -moz-font-feature-settings: "ss01" on, "ss03" on;
-          line-height: 34px;
         }
       </style>
       ${ (domain.split(".").shift() || "").toString().length < 4 ? 

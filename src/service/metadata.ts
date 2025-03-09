@@ -8,6 +8,7 @@ import { Version }                              from '../base';
 import {
   CANVAS_FONT_PATH,
   CANVAS_EMOJI_FONT_PATH,
+  CANVAS_APPLE_EMOJI_FONT_PATH,
 }                                               from '../config';
 import { createSVGfromTemplate }  from '../svg-template';
 import base64EncodeUnicode                      from '../utils/base64encode';
@@ -177,9 +178,7 @@ export class Metadata {
       this.setImage('');
     }
   }
-
-  
-
+ 
   processSubdomain(name: string, isSubdomain: boolean) {
     let subdomainText;
     let domain = name;
@@ -264,8 +263,9 @@ export class Metadata {
   static _getFontSize(name: string): number {
     if (!this.ctx) { 
       try {
-        registerFont(CANVAS_FONT_PATH, { family: 'Satoshi' });
+        registerFont(CANVAS_FONT_PATH, { family: 'Satoshi Variable' });
         registerFont(CANVAS_EMOJI_FONT_PATH, { family: 'Noto Color Emoji' });
+        registerFont(CANVAS_APPLE_EMOJI_FONT_PATH, { family: 'Apple Color Emoji' });
       } catch (error) {
         console.warn('Font registration is failed.');
         console.warn(error);
@@ -273,7 +273,7 @@ export class Metadata {
       const canvas = createCanvas(270, 270, 'svg');
       this.ctx = canvas.getContext('2d');
       this.ctx.font =
-        '20px Satoshi, Noto Color Emoji, Apple Color Emoji, sans-serif';
+        '20px Satoshi Variable, Noto Color Emoji, Apple Color Emoji, sans-serif';
     }
 
     const fontMetrics = this.ctx.measureText(name);
