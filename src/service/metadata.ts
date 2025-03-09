@@ -68,7 +68,7 @@ export class Metadata {
     this.description = this.formatDescription(name, description);
     this.attributes = this.initializeAttributes(created_date, label);
     this.external_url = this.is_normalized
-      ? `https://app.monadns.com/name/${name}`
+      ? `https://dapp.monadns.com/name/${name}`
       : null;
     this.last_request_date = last_request_date;
     this.version = version;
@@ -243,7 +243,6 @@ export class Metadata {
       height: number
     ]
   ): string {
-    console.log(args)
     if (!Object.values(Version).includes(this.version)) {
       throw Error(`Unknown Metadata version: ${this.version}`);
     }
@@ -265,7 +264,7 @@ export class Metadata {
       try {
         registerFont(CANVAS_FONT_PATH, { family: 'Satoshi Variable' });
         registerFont(CANVAS_EMOJI_FONT_PATH, { family: 'Noto Color Emoji' });
-        registerFont(CANVAS_APPLE_EMOJI_FONT_PATH, { family: 'Apple Color Emoji' });
+        //registerFont(CANVAS_APPLE_EMOJI_FONT_PATH, { family: 'Apple Color Emoji' });
       } catch (error) {
         console.warn('Font registration is failed.');
         console.warn(error);
