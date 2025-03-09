@@ -12,6 +12,8 @@ RUN yarn build && yarn add cors
 
 USER root
 RUN apt-get install fontconfig && fc-cache -f -v
+RUN chmod a+rw -R /home
+RUN apt install -y pango1.0-tools
 
 EXPOSE 8080
 
