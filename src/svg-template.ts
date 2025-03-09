@@ -101,20 +101,7 @@ export function createSVGfromTemplate({
           font-weight: 600 900;
           src: url(${fontSatoshiBold});
         }
-
-        @font-face { 
-          font-family: "Noto Color Emoji";
-          font-style: normal;
-          font-weight: 600 900;
-          src: url(${notoColorEmoji});
-        }
-
-        @font-face { 
-          font-family: "Apple Color Emoji";
-          font-style: normal;
-          font-weight: 600 900;
-          src: url(${appleColorEmoji});
-        }
+        
 
         text {
           font-family: 'Satoshi Variable', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
