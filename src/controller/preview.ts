@@ -4,7 +4,7 @@ import { RESPONSE_TIMEOUT } from '../config';
 import { Metadata } from '../service/metadata';
  
 export async function preview(req: Request, res: Response) { 
-  console.log("preview")
+  
   res.setTimeout(RESPONSE_TIMEOUT, () => {
     res.status(504).json({ message: 'Timeout' });
   }); 
