@@ -4,16 +4,12 @@ import {
   GET_DOMAINS, 
 }                         from './subgraph';
 import { Metadata }       from './metadata';
-import { getAvatarImage } from './avatar';
 import {
   ExpiredNameError,
-  NamehashMismatchError,
   SubgraphRecordNotFound,
   Version,
 }                         from '../base';
 import { NetworkName }    from './network';
-
-import { getNamehash }    from '../utils/getNamehash';
 
 
 const mon =
@@ -44,7 +40,7 @@ export async function getDomain(
   }
   
 
-  const result = await request(SUBGRAPH_URL, GET_DOMAINS, { tokenId: hexId });
+  const result = await request(SUBGRAPH_URL, GET_DOMAINS, { id: hexId });
   
   const domain = result.domain;
  
@@ -52,24 +48,7 @@ export async function getDomain(
     throw new SubgraphRecordNotFound(`No record for ${hexId}`);
 
   const { name, labelName, createdAt, registeredAt, expiryDate, id } = domain;
- 
-  /**
-   * IMPORTANT
-   *
-   * This check must be done in any case,
-   * the reason is unfortunately the graph does strip null characters
-   * from names, so even though the namehash is different,
-   * domains with or without null byte look identical
-   */
- 
-  /**
-  if (getNamehash(label) !== id) {
-    throw new NamehashMismatchError(
-      `TokenID of the query does not match with namehash of ${label}`,
-      404
-    );
-  }*/
- 
+  
   const metadata = new Metadata({
     name: name,
     created_date: createdAt,
@@ -110,7 +89,7 @@ export async function getDomain(
 
   async function requestMedia(isAvatarExist: boolean) {
     if (loadImages) {
-      metadata.generateImage(270, 270);
+      metadata.generateImage();
     } else {
       metadata.setImage(
         `https://metadata.monadns.com/${networkName}/${contractAddress}/${hexId}/image`
@@ -118,8 +97,6 @@ export async function getDomain(
     }
   }
  
-    
-  //const isAvatarExist = resolver?.texts && resolver.texts.includes('avatar');
   await Promise.all([requestMedia(false)]);
   return metadata;
 }
@@ -140,7 +117,7 @@ export async function getDomainTemp(
   });
  
   async function requestMedia(isAvatarExist: boolean) {
-    metadata.generateImage(width, heigh);
+    metadata.generateImage();
   }
   
   await Promise.all([requestMedia(false)]);

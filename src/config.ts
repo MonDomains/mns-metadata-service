@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 8080;
 const HOST = process.env.HOST || 'localhost';
-const ENV = process.env.ENV || 'local'; // local/prod
+const ENV = process.env.ENV || 'local'; 
 const REDIS_URL = process.env.REDIS_URL;
 
 const FONT_FOLDER = path.join((ENV === 'local' ? 'src' : 'dist'), 'assets/font');

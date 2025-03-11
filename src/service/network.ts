@@ -53,14 +53,10 @@ export default function getNetwork(network: NetworkName): {
   SUBGRAPH_URL: string;
   provider: ethers.providers.BaseProvider;
 } {
-  // currently subgraphs used under this function are outdated,
-  // we will have namewrapper support and more attributes when latest subgraph goes to production
+
   let SUBGRAPH_URL: any;
   
   switch (network) { 
-    case NETWORK.SEPOLIA:
-      SUBGRAPH_URL = process.env.GRAPH_API_URL?.toString()
-      break;
     case NETWORK.MONAD_TESTNET:
       SUBGRAPH_URL = process.env.GRAPH_API_URL?.toString()
       break;
@@ -73,8 +69,7 @@ export default function getNetwork(network: NetworkName): {
 
   const WEB3_URL = getWeb3URL(NODE_PROVIDER, NODE_PROVIDER_URL, network);
 
-  // add source param at the end for better request measurability
-  SUBGRAPH_URL = SUBGRAPH_URL + '?source=fns-metadata';
+  SUBGRAPH_URL = SUBGRAPH_URL + '?source=mns-metadata';
 
   const provider = new ethers.providers.StaticJsonRpcProvider(WEB3_URL);
   return { WEB3_URL, SUBGRAPH_URL, provider };

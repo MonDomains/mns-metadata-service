@@ -154,21 +154,18 @@ export class Metadata {
     }
   }
 
-  generateImage(width: number, height: number) {
+  generateImage() {
     const name = this.name;
     const labels = name.split('.');
     const isSubdomain = labels.length > 2;
-    
-
+     
     const { domain, subdomainText } = this.processSubdomain(name, isSubdomain);
     const { processedDomain, domainFontSize } = this.processDomain(domain);
     const svg = this._generateByVersion(
       domainFontSize,
       subdomainText,
       isSubdomain,
-      processedDomain,
-      width,
-      height
+      processedDomain
     );
 
     try {
@@ -238,9 +235,7 @@ export class Metadata {
       domainFontSize: number,
       subdomainText: string | undefined,
       isSubdomain: boolean,
-      domain: string,
-      width: number,
-      height: number
+      domain: string
     ]
   ): string {
     if (!Object.values(Version).includes(this.version)) {
@@ -305,8 +300,6 @@ export class Metadata {
     subdomainText: string | undefined,
     isSubdomain: boolean,
     domain: string,
-    width: number,
-    height: number,
     version: Version
   ) { 
     return createSVGfromTemplate({
@@ -317,9 +310,7 @@ export class Metadata {
       isSubdomain,
       mimeType: this.mimeType,
       subdomainText,
-      version,
-      width,
-      height
+      version
     });
   }
 

@@ -57,7 +57,7 @@ if (process.env.ENV === 'local') {
 }
 
 app.use(rateLimitMiddleware);
-//app.use(blockRecursiveCalls);
+app.use(blockRecursiveCalls);
 
 // apply cache header for all get requests
 app.use(setCacheHeader);
@@ -77,7 +77,7 @@ function shouldCompress(req: Request, res: Response) {
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`APP_LOG::App listening on port ${PORT}`);
+  console.log(`App listening on port ${PORT}`);
 });
 
 app.get('/favicon.ico', (req: Request, res: Response) => {

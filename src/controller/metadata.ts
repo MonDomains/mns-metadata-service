@@ -14,13 +14,12 @@ import {
   ETH_REGISTRY_ABI,
   RESPONSE_TIMEOUT,
 }                                  from '../config';
-import { checkContract }           from '../service/contract';
 import { getDomain }               from '../service/domain';
 import { Metadata }                from '../service/metadata';
 import getNetwork, { NetworkName } from '../service/network';
 import { constructEthNameHash }    from '../utils/getNamehash';
 
-export async function ensMetadata(req: Request, res: Response) {
+export async function metadata(req: Request, res: Response) {
 
   res.setTimeout(RESPONSE_TIMEOUT, () => {
     res.status(504).json({ message: 'Timeout' });
@@ -28,6 +27,7 @@ export async function ensMetadata(req: Request, res: Response) {
   });
 
   const { contractAddress, networkName, tokenId } = req.params;
+  
   const { provider, SUBGRAPH_URL } = getNetwork(networkName as NetworkName);
   const last_request_date = Date.now();
  

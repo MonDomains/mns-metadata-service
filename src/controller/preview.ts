@@ -2,28 +2,29 @@ import { Request, Response } from 'express';
 import { Version } from '../base';
 import { RESPONSE_TIMEOUT } from '../config';
 import { Metadata } from '../service/metadata';
-
-/* istanbul ignore next */
-export async function preview(req: Request, res: Response) {
-  // #swagger.description = 'MNS NFT preview'
-  // #swagger.parameters['name'] = { type: 'string', description: 'MNS name.' }
+ 
+export async function preview(req: Request, res: Response) { 
+  
   res.setTimeout(RESPONSE_TIMEOUT, () => {
     res.status(504).json({ message: 'Timeout' });
-  });
+  }); 
 
   const { name } = req.params;
 
   try {
-    if (!name || name.length < 7 || !name.endsWith('.mon')) {
+
+    if (!name || !name.endsWith('.mon')) {
       throw Error(`${name} is not an MNS name.`);
     }
+
     const metadata = new Metadata({
       name,
       created_date: 0,
       tokenId: '0',
       version: Version.v2,
     });
-    metadata.generateImage(270, 270);
+
+    metadata.generateImage(); 
 
     if (metadata.image) {
       const base64 = metadata.image.replace('data:image/svg+xml;base64,', '');
@@ -39,14 +40,9 @@ export async function preview(req: Request, res: Response) {
       }
     } else {
       throw Error('Image URL is missing.');
-    }
-    /* #swagger.responses[200] = { 
-        description: 'Image file'
-    } */
-  } catch (error) {
-    /* #swagger.responses[404] = { 
-           description: 'No results found' 
-    } */
+    } 
+    
+  } catch (error) { 
     if (!res.headersSent) {
       res.status(404).json({
         message: `Error generating image: ${error}`,

@@ -1,22 +1,11 @@
+
 import { Version } from "./base";
-import { CANVAS_FONT_PATH, CANVAS_EMOJI_FONT_PATH, CANVAS_APPLE_EMOJI_FONT_PATH }  from './config';
+import { CANVAS_FONT_PATH, CANVAS_EMOJI_FONT_PATH }  from './config';
 import { importFont } from "./utils/importFont";
+const sharp = require("sharp")
 
 const fontSatoshiBold = importFont(CANVAS_FONT_PATH, 'font/truetype'); 
 const notoColorEmoji = importFont(CANVAS_EMOJI_FONT_PATH, 'font/truetype'); 
-const appleColorEmoji = importFont(CANVAS_APPLE_EMOJI_FONT_PATH, 'font/truetype'); 
-
-export const obscureName = (name: string, len: number) => {
-  if(getLength(name) > len) {
-      return Array.from(name).slice(0, len / 2).join("") + "..." + Array.from(name).slice(name.length - (len / 2), name.length).join("");
-  } else {
-      return name;
-  }
-}
-
-export const getLength = (label: string) => { 
-  return Array.from(label).length;
-}
 
 interface SVGTemplateFields {
   backgroundImage?: string;
@@ -27,8 +16,6 @@ interface SVGTemplateFields {
   mimeType?: string;
   subdomainText?: string;
   version: Version;
-  width: number;
-  height: number;
 }
  
 export function createSVGfromTemplate({
@@ -39,21 +26,19 @@ export function createSVGfromTemplate({
   isSubdomain = false,
   mimeType,
   subdomainText,
-  version,
-  width,
-  height
+  version
 }: SVGTemplateFields) {
-  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return `<svg width="270" height="270" viewBox="0 0 270 270" fill="none" xmlns="http://www.w3.org/2000/svg">
     ${
       backgroundImage
-        ? `<image href="data:${mimeType};base64,${backgroundImage}" width="${width}" height="${height}"/>
-        <rect width="${width}" height="${height}" fill="#000" fill-opacity=".12"/>`
+        ? `<image href="data:${mimeType};base64,${backgroundImage}" width="270" height="270"/>
+        <rect width="270" height="270" fill="#000" fill-opacity=".12"/>`
         : isNormalized
-          ? `<rect width="${width}" height="${height}" fill="url(#paint0_linear)"/>`
-          : `<rect width="${width}" height="${height}" fill="url(#paint1_linear)"/>`
+          ? `<rect width="270" height="270" fill="url(#paint0_linear)"/>`
+          : `<rect width="270" height="270" fill="url(#paint1_linear)"/>`
     }
     <defs>
-      <filter id="dropShadow" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="${height}" width="${width}">
+      <filter id="dropShadow" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="270" width="270">
         <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.225" width="100%" height="100%"/>
       </filter>
     </defs> 
@@ -101,8 +86,14 @@ export function createSVGfromTemplate({
           font-weight: 600 900;
           src: url(${fontSatoshiBold});
         }
-        
 
+        @font-face { 
+          font-family: "Noto Color Emoji";
+          font-style: normal;
+          font-weight: 600 900;
+          src: url(${notoColorEmoji});
+        }
+         
         text {
           font-family: 'Satoshi Variable', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
           font-style: normal;
