@@ -4,7 +4,7 @@ import { RESPONSE_TIMEOUT } from '../config';
 import { Metadata } from '../service/metadata';
  
 export async function preview(req: Request, res: Response) { 
-  
+  console.log("preview")
   res.setTimeout(RESPONSE_TIMEOUT, () => {
     res.status(504).json({ message: 'Timeout' });
   }); 
@@ -16,7 +16,7 @@ export async function preview(req: Request, res: Response) {
     if (!name || !name.endsWith('.mon')) {
       throw Error(`${name} is not an MNS name.`);
     }
-
+ 
     const metadata = new Metadata({
       name,
       created_date: 0,
@@ -24,6 +24,7 @@ export async function preview(req: Request, res: Response) {
       version: Version.v2,
     });
 
+    
     metadata.generateImage(); 
 
     if (metadata.image) {

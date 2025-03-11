@@ -107,7 +107,7 @@ export async function getDomainTemp(
   heigh: number
 ): Promise<Metadata> {
 
-  const version = Version.v1; 
+  const version = Version.v2; 
 
   const metadata = new Metadata({
     name: label,

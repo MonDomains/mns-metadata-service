@@ -28,7 +28,7 @@ export async function image(req: Request, res: Response) {
       SUBGRAPH_URL,
       contractAddress,
       tokenId,
-      Version.v1
+      Version.v2
     );
     
     if (result.image_url) {
