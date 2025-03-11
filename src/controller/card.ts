@@ -138,13 +138,6 @@ export function createCardSVGfromTemplate(name: string) {
         src: url(${fontSatoshiBold});
       }
 
-      @font-face { 
-          font-family: "Noto Color Emoji";
-          font-style: normal;
-          font-weight: 600 900;
-          src: url(${notoColorEmoji});
-      }
-
       text {
         font-family: 'Satoshi Variable', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
         font-style: normal;

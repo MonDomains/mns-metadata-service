@@ -76,7 +76,7 @@ export function createSVGfromTemplate({
       font-size="${domainFontSize}px"
       ${isSubdomain ? 'opacity="0.4"' : ''}
       fill="${isNormalized ? "white" : "black"}"
-      filter="url(#dropShadow)">${domain}</text>
+      filter="url(#dropShadow)">${isNormalized ? domain: ""}</text>
     <defs>
        
       <style>
@@ -85,13 +85,6 @@ export function createSVGfromTemplate({
           font-style: normal;
           font-weight: 600 900;
           src: url(${fontSatoshiBold});
-        }
-
-        @font-face { 
-          font-family: "Noto Color Emoji";
-          font-style: normal;
-          font-weight: 600 900;
-          src: url(${notoColorEmoji});
         }
          
         text {
