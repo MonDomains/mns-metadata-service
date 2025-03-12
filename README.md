@@ -1,12 +1,14 @@
 # mns-metadata-service
-MONAD Domains Metadata Service for NFTs
+MNS - Metadata Service for NFTs
 
-## How to install?
+## Install Dependencies
 ```shell
 yarn install
 ```
 
-## How to run?
+## Run Application
+Rename .env.template to .env and set variables
+
 ```shell
 yarn build && yarn dev
 ```
@@ -16,16 +18,12 @@ yarn build && yarn dev
 sudo apt-get install fontconfig && sudo fc-cache -f -v
 ```
 
-## Sepolia Contracts
-Registry: 0x2F97F7FBea0673648eF545d6fBBee567F8B9781c
-Registrar: 0xC2b4bAE402d2495Cd012Cb4Cb3C883A9619465EE
-
 ## Build Docker Image
 ```shell
-docker build -t user/mns-metadata-service .
+docker build -t {{user}}/mns-metadata-service .
 ```
 
 ## Run Docker Image
 ```shell
-docker run -it -p 8080:8080 --env-file .env rdonmez/mns-metadata-service
+docker run -it -p {{port}}:{{port}} --env-file .env {{user}}/mns-metadata-service
 ```
