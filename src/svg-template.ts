@@ -103,9 +103,6 @@ export function createSVGfromTemplate({
             svg text {
             animation: stroke 5s infinite alternate;
             animation-delay: 2s;
-            stroke-width: 0.8;
-            stroke: #ffffff;
-            fill: #ffffff;
         }
 
         @keyframes stroke {
