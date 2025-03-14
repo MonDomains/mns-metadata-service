@@ -28,7 +28,7 @@ export function createSVGfromTemplate({
   subdomainText,
   version
 }: SVGTemplateFields) {
-  return `<svg width="270" height="270" viewBox="0 0 270 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return `<svg width="100vw" height="100vh" viewBox="0 0 270 270" fill="none" xmlns="http://www.w3.org/2000/svg">
     ${
       backgroundImage
         ? `<image href="data:${mimeType};base64,${backgroundImage}" width="270" height="270"/>
