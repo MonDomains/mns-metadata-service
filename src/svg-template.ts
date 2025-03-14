@@ -102,14 +102,15 @@ export function createSVGfromTemplate({
         `<style type="text/css"> 
             svg text {
             animation: stroke 5s infinite alternate;
-            stroke-width: 1;
-            stroke: #c17efc;
-            fill: #b05cf9;
+            animation-delay: 2s;
+            stroke-width: 0.8;
+            stroke: #ffffff;
+            fill: #ffffff;
         }
 
         @keyframes stroke {
             0% {
-                stroke: #8F7CF7;
+                stroke: #ffffff;
                 fill: #ffffff;
                 stroke-dashoffset: 25%;
                 stroke-dasharray: 0 50%;
@@ -122,14 +123,14 @@ export function createSVGfromTemplate({
             }
 
             80% {
-                fill: rgba(255, 255, 255, 0.8); 
+                fill: #ffffff;
                 stroke: rgba(255, 255, 255, 1); 
                 stroke-width: 0.8;
             }
 
             100% {
-                fill: rgba(255, 255, 255, 1); 
-                stroke: rgba(255, 255, 255, 0);
+                fill: #ffffff;
+                fill: #ffffff;
                 stroke-dashoffset: -25%;
                 stroke-dasharray: 50% 0;
                 stroke-width: 0;
