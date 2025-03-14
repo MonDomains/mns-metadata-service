@@ -43,14 +43,14 @@ export function createSVGfromTemplate({
       </filter>
     </defs> 
     
-    <path fill="#ffffff" d="M 0 0 L 6.496094 0 L 6.496094 36.996094 L 0 36.996094 Z M 0 0 " fill-opacity="1" fill-rule="red" transform="translate(22,32.5)" />  
-    <path fill="#ffffff" d="M 30.535156 0 L 37.007812 0 L 37.007812 37.003906 L 30.535156 37.003906 Z M 30.535156 0 " fill-opacity="1" fill-rule="red" transform="translate(22,32.5)" />  
-    <path fill="#ffffff" d="M 0 0 L 13.875 0 L 13.875 6.46875 L 0 6.46875 Z M 0 0 "  fill-opacity="1" fill-rule="red" transform="translate(22,32.5)" />  
-    <path fill="#ffffff" d="M 23.128906 0 L 37.003906 0 L 37.003906 6.46875 L 23.128906 6.46875 Z M 23.128906 0 " fill-opacity="1" fill-rule="red"  transform="translate(22,32.5)" />  
-    <path fill="#ffffff" d="M 0 30.535156 L 13.875 30.535156 L 13.875 37.007812 L 0 37.007812 Z M 0 30.535156 " fill-opacity="1" fill-rule="red"  transform="translate(22,32.5)" />  
-    <path fill="#ffffff" d="M 23.128906 30.535156 L 37.003906 30.535156 L 37.003906 37.007812 L 23.128906 37.007812 Z M 23.128906 30.535156 " fill-opacity="1" fill-rule="red" transform="translate(22,32.5)" /> 
+    <path fill="#ffffff" d="M 0 0 L 6.496094 0 L 6.496094 36.996094 L 0 36.996094 Z M 0 0 " fill-opacity="1" fill-rule="red" transform="translate(20,20)" />  
+    <path fill="#ffffff" d="M 30.535156 0 L 37.007812 0 L 37.007812 37.003906 L 30.535156 37.003906 Z M 30.535156 0 " fill-opacity="1" fill-rule="red" transform="translate(20,20)" />  
+    <path fill="#ffffff" d="M 0 0 L 13.875 0 L 13.875 6.46875 L 0 6.46875 Z M 0 0 "  fill-opacity="1" fill-rule="red" transform="translate(20,20)" />  
+    <path fill="#ffffff" d="M 23.128906 0 L 37.003906 0 L 37.003906 6.46875 L 23.128906 6.46875 Z M 23.128906 0 " fill-opacity="1" fill-rule="red"  transform="translate(20,20)" />  
+    <path fill="#ffffff" d="M 0 30.535156 L 13.875 30.535156 L 13.875 37.007812 L 0 37.007812 Z M 0 30.535156 " fill-opacity="1" fill-rule="red"  transform="translate(20,20)" />  
+    <path fill="#ffffff" d="M 23.128906 30.535156 L 37.003906 30.535156 L 37.003906 37.007812 L 23.128906 37.007812 Z M 23.128906 30.535156 " fill-opacity="1" fill-rule="red" transform="translate(20,20)" /> 
 
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="247" height="243" x="5%" y="5%" 
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="247" height="243" x="5%" y="8%" 
     style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
     xmlns:xlink="http://www.w3.org/1999/xlink">
       <g>
@@ -70,7 +70,7 @@ export function createSVGfromTemplate({
     }
     ${subdomainText || ''}
     <text
-      x="22" 
+      x="20" 
       y="231" 
       font-family="Satoshi Variable"
       font-size="${domainFontSize}px"
