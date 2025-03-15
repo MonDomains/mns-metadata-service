@@ -52,9 +52,9 @@ app.use(
   })
 );
 
-if (process.env.ENV === 'local') {
-  app.use('/assets', express.static(path.join(__dirname, 'assets')));
-}
+//if (process.env.ENV === 'local') {
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+//}
 
 app.use(rateLimitMiddleware);
 app.use(blockRecursiveCalls);

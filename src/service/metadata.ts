@@ -269,12 +269,12 @@ export class Metadata {
       const canvas = createCanvas(270, 270, 'svg');
       this.ctx = canvas.getContext('2d');
       this.ctx.font =
-        '20px Satoshi Variable, Noto Color Emoji, Apple Color Emoji, sans-serif';
+        '30px Satoshi Variable, Noto Color Emoji, Apple Color Emoji, sans-serif';
     }
 
     const fontMetrics = this.ctx.measureText(name);
-    const fontSize = Math.floor(20 * (200 / fontMetrics.width));
-    return fontSize < 34 ? fontSize : 32;
+    const fontSize = Math.floor(28 * (230 / fontMetrics.width));
+    return fontSize < 30 ? fontSize : 30;
   }
 
   private _checkNormalized(name: string) {
