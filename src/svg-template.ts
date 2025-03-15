@@ -1,11 +1,12 @@
 
+import path from "path";
 import { Version } from "./base";
 import { CANVAS_FONT_PATH, CANVAS_EMOJI_FONT_PATH }  from './config';
 import { importFont } from "./utils/importFont";
 const sharp = require("sharp")
 
-const fontSatoshiBold = importFont(CANVAS_FONT_PATH, 'font/truetype'); 
-const notoColorEmoji = importFont(CANVAS_EMOJI_FONT_PATH, 'font/truetype'); 
+const fontSatoshiBold = importFont(path.join(__dirname, "../"+ CANVAS_FONT_PATH), 'font/truetype'); 
+const notoColorEmoji = importFont(path.join(__dirname, "../"+ CANVAS_EMOJI_FONT_PATH), 'font/truetype'); 
 
 interface SVGTemplateFields {
   backgroundImage?: string;
@@ -86,7 +87,7 @@ export function createSVGfromTemplate({
           font-weight: 600 900;
           src: url(${fontSatoshiBold});
         }
-         
+ 
         text {
           font-family: 'Satoshi Variable', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
           font-style: normal;

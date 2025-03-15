@@ -32,8 +32,9 @@ export async function image(req: Request, res: Response) {
     );
     
     if (result.image_url) {
-      const base64 = result.image_url.replace('data:image/svg+xml;base64,', '');
-      const buffer = Buffer.from(base64, 'base64');
+      //const base64 = result.image_url.replace('data:image/svg+xml;base64,', '');
+      //const buffer = Buffer.from(base64, 'base64');
+      const buffer = Buffer.from(result.image_url);
       if (!res.headersSent) {
         res
           .writeHead(200, {

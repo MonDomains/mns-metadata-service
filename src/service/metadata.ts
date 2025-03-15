@@ -14,6 +14,7 @@ import { createSVGfromTemplate }  from '../svg-template';
 import base64EncodeUnicode                      from '../utils/base64encode';
 import { isASCII, findCharacterSet }            from '../utils/characterSet';
 import { getCodePointLength, getSegmentLength } from '../utils/charLength';
+import path from 'path';
 
 
 interface Attribute {
@@ -169,7 +170,8 @@ export class Metadata {
     );
 
     try {
-      this.setImage('data:image/svg+xml;base64,' + base64EncodeUnicode(svg));
+      //this.setImage('data:image/svg+xml;base64,' + base64EncodeUnicode(svg));
+      this.setImage(svg);
     } catch (e) {
       console.log(processedDomain, e);
       this.setImage('');
@@ -215,18 +217,19 @@ export class Metadata {
 
     let domainFontSize = Metadata._getFontSize(domain);
     
-    if (charSegmentLength > 25) {
-      domain = this._addSpan(domain, charSegmentLength / 2);
-      domainFontSize = (domainFontSize - 1) * 2;
+    let length = Array.from(domain).length;
+    if (length > 25) {
+      domain = this._addSpan(domain, length / 2);
+      domainFontSize = (domainFontSize -2) * 2;
     }
-
+ 
     return { processedDomain: domain, domainFontSize };
   }
 
   private _addSpan(str: string, index: number) {
     return `
-    <tspan x="32" dy="-1.2em">${str.substring(0, index)}</tspan>
-    <tspan x="32" dy="1.2em">${str.substring(index, str.length)}</tspan>
+    <tspan x="20" dy="-1.2em">${Array.from(str).slice(0, index).join('')}</tspan>
+    <tspan x="20" dy="1.2em">${Array.from(str).slice(index, Array.from(str).length).join('')}</tspan>
     `;
   }
 
@@ -257,9 +260,8 @@ export class Metadata {
   static _getFontSize(name: string): number {
     if (!this.ctx) { 
       try {
-        registerFont(CANVAS_FONT_PATH, { family: 'Satoshi Variable' });
-        registerFont(CANVAS_EMOJI_FONT_PATH, { family: 'Noto Color Emoji' });
-        //registerFont(CANVAS_APPLE_EMOJI_FONT_PATH, { family: 'Apple Color Emoji' });
+        registerFont(path.join(__dirname, "../../"+ CANVAS_FONT_PATH), { family: 'Satoshi Variable', weight: "600", style: "normal"  });
+        registerFont(path.join(__dirname, "../../"+ CANVAS_EMOJI_FONT_PATH), { family: 'Noto Color Emoji', weight: "600", style: "normal" });
       } catch (error) {
         console.warn('Font registration is failed.');
         console.warn(error);
@@ -271,7 +273,6 @@ export class Metadata {
     }
 
     const fontMetrics = this.ctx.measureText(name);
-
     const fontSize = Math.floor(20 * (200 / fontMetrics.width));
     return fontSize < 34 ? fontSize : 32;
   }

@@ -28,8 +28,9 @@ export async function preview(req: Request, res: Response) {
     metadata.generateImage(); 
 
     if (metadata.image) {
-      const base64 = metadata.image.replace('data:image/svg+xml;base64,', '');
-      const buffer = Buffer.from(base64, 'base64');
+      //const base64 = metadata.image.replace('data:image/svg+xml;base64,', '');
+      //const buffer = Buffer.from(base64, 'base64');
+      const buffer = Buffer.from(metadata.image);
       if (!res.headersSent) {
         res
           .writeHead(200, {
