@@ -2,9 +2,12 @@ import { Request, Response } from 'express';
 import { CANVAS_EMOJI_FONT_PATH, CANVAS_FONT_PATH, RESPONSE_TIMEOUT } from '../config';
 import { importFont } from '../utils/importFont';
 import { getFontSize, getTokenId, obscureName } from '../utils/strings';
+
 const sharp = require("sharp")
 const fontSatoshiBold = importFont(CANVAS_FONT_PATH, 'font/truetype'); 
 const notoColorEmoji = importFont(CANVAS_EMOJI_FONT_PATH, 'font/truetype'); 
+const satoshiFontUrl = "/assets/font/Satoshi-Variable.ttf";
+const notoEmojiFontUrl = "/assets/font/NotoColorEmoji-Regular.ttf";
 
 export async function card(req: Request, res: Response) { 
   
@@ -61,7 +64,7 @@ export function createCardSVGfromTemplate(name: string) {
       </filter>
   </defs> 
 
-  ${name.length < 4 ? 
+  ${Array.from(name).length < 4 ? 
       `<style type="text/css"> 
           svg text#blink {
           animation: stroke 5s infinite alternate;
@@ -135,7 +138,14 @@ export function createCardSVGfromTemplate(name: string) {
         font-family: "Satoshi Variable";
         font-style: normal;
         font-weight: 600 900;
-        src: url(${fontSatoshiBold});
+        src: url(${satoshiFontUrl});
+      }
+
+      @font-face { 
+        font-family: "Noto Color Emoji";
+        font-style: normal;
+        font-weight: 600 900;
+        src: url(${notoEmojiFontUrl});
       }
 
       text {
@@ -154,13 +164,15 @@ export function createCardSVGfromTemplate(name: string) {
   x="1100" 
   y="40" 
   font-size="25" 
-  fill="white">${"Monad"}</text> 
+  fill="white"
+  filter="url(#dropShadow)">${"Monad"}</text> 
 
   <text
   x="24" 
   y="600" 
   font-size="22"  
-  fill="white">#${getTokenId(name)}</text>
+  fill="white" 
+  filter="url(#dropShadow)">#${getTokenId(name)}</text>
 
   <text id="blink"
   x="400" 
