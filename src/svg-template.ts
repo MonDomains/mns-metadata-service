@@ -7,8 +7,8 @@ const sharp = require("sharp")
 
 const fontSatoshiBold = importFont(path.join(__dirname, "../"+ CANVAS_FONT_PATH), 'font/truetype'); 
 const fontSatoshiBoldUrl = "/assets/font/Satoshi-Variable.ttf";
-
 const notoColorEmoji = importFont(path.join(__dirname, "../"+ CANVAS_EMOJI_FONT_PATH), 'font/truetype'); 
+const notoEmojiFontUrl = "/assets/font/NotoColorEmoji-Regular.ttf";
 
 interface SVGTemplateFields {
   backgroundImage?: string;
@@ -88,6 +88,13 @@ export function createSVGfromTemplate({
           font-style: normal;
           font-weight: 600 900;
           src: url(${fontSatoshiBoldUrl});
+        }
+
+        @font-face { 
+          font-family: "Noto Color Emoji";
+          font-style: normal;
+          font-weight: 600 900;
+          src: url(${notoEmojiFontUrl});
         }
  
         text {
