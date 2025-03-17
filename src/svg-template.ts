@@ -167,7 +167,7 @@ const fontStyles = `
     }
 
     @font-face { 
-      font-family: "Satoshi Variable";
+      font-family: "Noto Color Emoji";
       font-style: normal;
       font-weight: 600 900;
       src: url(${notoColorEmoji});
