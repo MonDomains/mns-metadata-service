@@ -57,7 +57,7 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 //}
 
 app.use(rateLimitMiddleware);
-app.use(blockRecursiveCalls);
+//app.use(blockRecursiveCalls);
 
 // apply cache header for all get requests
 app.use(setCacheHeader);

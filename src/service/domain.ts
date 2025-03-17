@@ -38,8 +38,7 @@ export async function getDomain(
     intId = ethers.BigNumber.from(tokenId).toString();
     hexId = tokenId;
   }
-  
-
+   
   const result = await request(SUBGRAPH_URL, GET_DOMAINS, { id: hexId });
   
   const domain = result.domain;
