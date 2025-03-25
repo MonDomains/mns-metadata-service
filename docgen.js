@@ -54,7 +54,7 @@ const doc = {
       $background_image: 'Origin URL of avatar image',
       $image_url: 'URL of MNS NFT image',
     },
-    contractAddress: '0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85',
+    contractAddress: '0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D',
     mnsName: 'nick.mon',
     tokenId: '4221908525551133525058944220830153...',
     networkName: {
@@ -126,7 +126,7 @@ const doc = {
         background_image:
           'https://metadata.monadns.com/monad/avatar/nick.mon',
         image_url:
-          'https://metadata.monadns.com/monad/0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85/0x5d5727cb0fb76e4944eafb88ec9a3cf0b3c9025a4b2f947729137c5d7f84f68f/image',
+          'https://metadata.monadns.com/monad/0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D/0x5d5727cb0fb76e4944eafb88ec9a3cf0b3c9025a4b2f947729137c5d7f84f68f/image',
       },
     },
   },

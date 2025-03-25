@@ -14,7 +14,7 @@
 
 Request (example)
 
-https://metadata.monadns.com/monad/0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85/42219085255511335250589442208301538195142221433306354426240614732612795430543/
+https://metadata.monadns.com/monad/0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D/42219085255511335250589442208301538195142221433306354426240614732612795430543/
 
 ### Response (example)
 
@@ -60,8 +60,8 @@ https://metadata.monadns.com/monad/0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85/42
   "url": "https://app.monadns.com/name/nick.mon",
   "version": 0,
   "background_image": "https://metadata.monadns.com/monad/avatar/nick.mon",
-  "image": "https://metadata.monadns.com/monad/0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85/0x5d5727cb0fb76e4944eafb88ec9a3cf0b3c9025a4b2f947729137c5d7f84f68f/image",
-  "image_url": "https://metadata.monadns.com/monad/0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85/0x5d5727cb0fb76e4944eafb88ec9a3cf0b3c9025a4b2f947729137c5d7f84f68f/image"
+  "image": "https://metadata.monadns.com/monad/0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D/0x5d5727cb0fb76e4944eafb88ec9a3cf0b3c9025a4b2f947729137c5d7f84f68f/image",
+  "image_url": "https://metadata.monadns.com/monad/0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D/0x5d5727cb0fb76e4944eafb88ec9a3cf0b3c9025a4b2f947729137c5d7f84f68f/image"
 }
 
 ```
@@ -110,7 +110,7 @@ yarn test:cov
 | ENV | Project scope | local | local/prod |
 | REDIS_URL | (Optional) Redis connection if you want to enable rate limiter | - | - |
 | INAMEWRAPPER | InterfaceId of NameWrapper Contract | 0xe89c48dc | - |
-| ADDRESS_MON_REGISTRAR | Monad address of MNSBaseRegistrar Contract | 0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85 | - |
+| ADDRESS_MON_REGISTRAR | Monad address of MNSBaseRegistrar Contract | 0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D | - |
 | ADDRESS_NAME_WRAPPER | Monad address of NameWrapper Contract | 0x582224b8d4534F4749EFA4f22eF7241E0C56D4B8 | - |
 | WEB3_NODE_URL | Monad Node Provider API | - | - |
 | NODE_PROVIDER | Monad Node Provider | Cloudflare | Cloudflare/Google/Infura/Local |
