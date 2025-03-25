@@ -7,7 +7,7 @@ import {
   ADDRESS_NAME_WRAPPER,
   INAMEWRAPPER,
 } from '../config';
-import { getLabelhash } from '../utils/labelhash';
+import { getLabelhash } from '../utils/labelHash';
 import { getNamehash } from '../utils/namehash';
 
 interface CheckContractResult {
