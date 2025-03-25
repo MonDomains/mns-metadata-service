@@ -39,7 +39,7 @@
     "viem": "2.9.2"
   },
   "scripts": {
-    "build": "tsc --project ./ && mkdir -p dist/assets && cp -R src/assets/ dist/assets/",
+    "build": "tsc --project ./",
     "dev": "ENV=local ts-node-dev --inspect -- src/index.ts",
     "start": "node dist/index.js",
     "test": "ENV=local ava -v --serial --timeout=2m",
