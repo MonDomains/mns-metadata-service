@@ -77,7 +77,7 @@ export async function getDomain(
   }
   */
   const metadata = new Metadata({
-    name,
+    name: name.replace(".eth", ".mon"),
     created_date: createdAt,
     tokenId: hexId,
     version,
