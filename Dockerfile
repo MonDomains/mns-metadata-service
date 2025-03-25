@@ -7,8 +7,8 @@ COPY tsconfig.json ./
 COPY docgen.js ./
 COPY src ./src
 
-RUN npm install --legacy-peer-deps
-RUN npm run build
+RUN yarn
+RUN yarn build
 RUN cp -r src/assets dist
 
 USER root
@@ -20,4 +20,4 @@ EXPOSE 8080
 RUN useradd app
 USER app
 
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start"]
