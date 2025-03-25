@@ -1,20 +1,16 @@
-import {ens_normalize}                          from '@adraffy/ens-normalize';
+import { ens_normalize, ens_beautify }              from '@adraffy/ens-normalize';
 import { 
   CanvasRenderingContext2D, 
   createCanvas, 
   registerFont 
-}                                               from 'canvas';
-import { Version }                              from '../base';
-import {
-  CANVAS_FONT_PATH,
-  CANVAS_EMOJI_FONT_PATH,
-  CANVAS_APPLE_EMOJI_FONT_PATH,
-}                                               from '../config';
-import { createSVGfromTemplate }  from '../svg-template';
-import base64EncodeUnicode                      from '../utils/base64encode';
-import { isASCII, findCharacterSet }            from '../utils/characterSet';
-import { getCodePointLength, getSegmentLength } from '../utils/charLength';
-import path from 'path';
+}                                                   from 'canvas';
+import { Version }                                  from '../base';
+import { CANVAS_FONT_PATH, CANVAS_EMOJI_FONT_PATH } from '../config';
+import createSVGfromTemplate                        from '../svg-template';
+import base64EncodeUnicode                          from '../utils/base64encode';
+import { isASCII, findCharacterSet }                from '../utils/characterSet';
+import { getCodePointLength, getSegmentLength }     from '../utils/charLength';
+import { WrapperState }                             from '../utils/fuse';
 
 
 interface Attribute {
@@ -45,7 +41,7 @@ export interface Metadata {
   is_normalized      : boolean;
   background_image?  : string;
   mimeType?          : string;
-  external_url?               : string | null;
+  url?               : string | null;
   version            : Version;
   last_request_date? : number;
 }
@@ -62,14 +58,13 @@ export class Metadata {
     version,
     last_request_date,
   }: MetadataInit) {
-
     const label = this.getLabel(name);
     this.is_normalized = this._checkNormalized(name);
     this.name = this.formatName(name, tokenId);
     this.description = this.formatDescription(name, description);
     this.attributes = this.initializeAttributes(created_date, label);
-    this.external_url = this.is_normalized
-      ? `https://dapp.monadns.com/name/${name}`
+    this.url = this.is_normalized
+      ? `https://app.monadns.com/name/${name}`
       : null;
     this.last_request_date = last_request_date;
     this.version = version;
@@ -81,7 +76,7 @@ export class Metadata {
 
   formatName(name: string, tokenId: string) {
     return this.is_normalized
-      ? name
+      ? ens_beautify(name)
       : tokenId.replace(
           new RegExp('^(.{0,6}).*(.{4})$', 'im'),
           '[$1...$2].mon'
@@ -107,6 +102,21 @@ export class Metadata {
         'simplified variants. For more information: ' +
         'https://en.wikipedia.org/wiki/IDN_homograph_attack'
       );
+    }
+    return '';
+  }
+
+  generateRuggableWarning(
+    label: string,
+    version: Version,
+    wrapperState: WrapperState
+  ) {
+    if (
+      version == Version.v2 &&
+      wrapperState === WrapperState.WRAPPED &&
+      (label.split('.').length > 1 || !label.endsWith('.mon'))
+    ) {
+      return ' [ ⚠️ ATTENTION: THE NFT FOR THIS NAME CAN BE REVOKED AT ANY TIME WHILE IT IS IN THE WRAPPED STATE ]';
     }
     return '';
   }
@@ -159,7 +169,7 @@ export class Metadata {
     const name = this.name;
     const labels = name.split('.');
     const isSubdomain = labels.length > 2;
-     
+
     const { domain, subdomainText } = this.processSubdomain(name, isSubdomain);
     const { processedDomain, domainFontSize } = this.processDomain(domain);
     const svg = this._generateByVersion(
@@ -170,14 +180,13 @@ export class Metadata {
     );
 
     try {
-      //this.setImage('data:image/svg+xml;base64,' + base64EncodeUnicode(svg));
-      this.setImage(svg);
+      this.setImage('data:image/svg+xml;base64,' + base64EncodeUnicode(svg));
     } catch (e) {
-      console.log(processedDomain, e);
+      console.log("generateImage", processedDomain, e);
       this.setImage('');
     }
   }
- 
+  
   processSubdomain(name: string, isSubdomain: boolean) {
     let subdomainText;
     let domain = name;
@@ -213,23 +222,22 @@ export class Metadata {
     if (charSegmentLength > Metadata.MAX_CHAR) {
       domain = Metadata._textEllipsis(domain);
       charSegmentLength = Metadata.MAX_CHAR;
-    } 
+    }
 
     let domainFontSize = Metadata._getFontSize(domain);
-    
-    let length = Array.from(domain).length;
-    if (length > 25) {
-      domain = this._addSpan(domain, length / 2);
-      domainFontSize = (domainFontSize -2) * 2;
+
+    if (charSegmentLength > 25) {
+      domain = this._addSpan(domain, charSegmentLength / 2);
+      domainFontSize = (domainFontSize - 1) * 2;
     }
- 
+
     return { processedDomain: domain, domainFontSize };
   }
 
   private _addSpan(str: string, index: number) {
     return `
-    <tspan x="20" dy="-1.2em">${Array.from(str).slice(0, index).join('')}</tspan>
-    <tspan x="20" dy="1.2em">${Array.from(str).slice(index, Array.from(str).length).join('')}</tspan>
+    <tspan x="32" dy="-1.2em">${str.substring(0, index)}</tspan>
+    <tspan x="32" dy="1.2em">${str.substring(index, str.length)}</tspan>
     `;
   }
 
@@ -258,10 +266,10 @@ export class Metadata {
   }
 
   static _getFontSize(name: string): number {
-    if (!this.ctx) { 
+    if (!this.ctx) {
       try {
-        registerFont(path.join(__dirname, "../../"+ CANVAS_FONT_PATH), { family: 'Satoshi Variable', weight: "600", style: "normal"  });
-        registerFont(path.join(__dirname, "../../"+ CANVAS_EMOJI_FONT_PATH), { family: 'Noto Color Emoji', weight: "600", style: "normal" });
+        registerFont(CANVAS_FONT_PATH, { family: 'Satoshi' });
+        registerFont(CANVAS_EMOJI_FONT_PATH, { family: 'Noto Color Emoji' });
       } catch (error) {
         console.warn('Font registration is failed.');
         console.warn(error);
@@ -269,12 +277,11 @@ export class Metadata {
       const canvas = createCanvas(270, 270, 'svg');
       this.ctx = canvas.getContext('2d');
       this.ctx.font =
-        '30px Satoshi Variable, Noto Color Emoji, Apple Color Emoji, sans-serif';
+        '20px Satoshi, Noto Color Emoji, Apple Color Emoji, sans-serif';
     }
-
     const fontMetrics = this.ctx.measureText(name);
-    const fontSize = Math.floor(28 * (230 / fontMetrics.width));
-    return fontSize < 30 ? fontSize : 30;
+    const fontSize = Math.floor(20 * (200 / fontMetrics.width));
+    return fontSize < 34 ? fontSize : 32;
   }
 
   private _checkNormalized(name: string) {
@@ -302,7 +309,7 @@ export class Metadata {
     isSubdomain: boolean,
     domain: string,
     version: Version
-  ) { 
+  ) {
     return createSVGfromTemplate({
       backgroundImage: this.background_image,
       domain: domain.trim(),
@@ -311,8 +318,7 @@ export class Metadata {
       isSubdomain,
       mimeType: this.mimeType,
       subdomainText,
-      version
+      version,
     });
   }
-
 }
