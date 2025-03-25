@@ -7,7 +7,7 @@ COPY tsconfig.json ./
 COPY docgen.js ./
 COPY src ./src
 
-RUN yarn install
+RUN yarn install --network-timeout 100000
 RUN yarn build
 RUN cp -r src/assets dist
 
