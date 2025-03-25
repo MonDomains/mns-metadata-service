@@ -7,7 +7,7 @@ COPY tsconfig.json ./
 COPY docgen.js ./
 COPY src ./src
 
-RUN yarn
+RUN yarn install
 RUN yarn build
 RUN cp -r src/assets dist
 
