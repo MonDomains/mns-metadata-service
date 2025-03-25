@@ -5,10 +5,10 @@ WORKDIR /usr/local/app
 COPY package.json ./
 COPY tsconfig.json ./
 COPY docgen.js ./
+COPY src ./src
+RUN mkdir -p dist/assets && cp -R src/assets/ dist/assets/
 
 RUN yarn
-
-COPY src ./src
 RUN yarn build
 
 USER root
