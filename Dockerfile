@@ -6,7 +6,7 @@ COPY package.json ./
 COPY tsconfig.json ./
 COPY docgen.js ./
 COPY src ./src
-RUN mkdir -p dist/assets && cp -R src/assets/ dist/assets/
+RUN mkdir -p dist/assets && cp -r src/assets dist
 
 RUN yarn
 RUN yarn build
