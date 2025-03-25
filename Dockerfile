@@ -6,10 +6,10 @@ COPY package.json ./
 COPY tsconfig.json ./
 COPY docgen.js ./
 COPY src ./src
-RUN mkdir -p dist/assets && cp -r src/assets dist
 
 RUN yarn
 RUN yarn build
+RUN cp -r src/assets dist
 
 USER root
 RUN apt-get install fontconfig && fc-cache -f -v
