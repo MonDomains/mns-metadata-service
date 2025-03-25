@@ -75,7 +75,7 @@ endpoints(app);
 app.use(malformedURIMiddleware);
 
 // Compress responses to improve performance, unless explicitly disabled
-app.use(compression({ filter: shouldCompress }));
+app.use(compression);
 
 // Function to determine whether to compress a response
 function shouldCompress(req: Request, res: Response) {
@@ -85,7 +85,7 @@ function shouldCompress(req: Request, res: Response) {
   }
 
   // Default to standard compression filter
-  return compression.filter(req, res);
+  //return compression.filter(req, res);
 }
 
 const PORT = process.env.PORT || 8080;

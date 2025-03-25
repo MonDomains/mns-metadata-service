@@ -53,7 +53,7 @@ export default function getNetwork(network: NetworkName): {
   switch (network) {
     case NETWORK.TESTNET:
       SUBGRAPH_URL =
-        `https://api.studio.thegraph.com/query/31812/mnsdomains/v0.0.1`;
+        `https://gateway.thegraph.com/api/${THE_GRAPH_API_KEY}/subgraphs/id/FCVSEukmVKanQbsnGaeDF9Pwn9Jyw7eHfYhPBkbJEj9z`;
       break;
     case NETWORK.MAINNET:
       SUBGRAPH_URL = 

@@ -1,14 +1,15 @@
-FROM node:23.7.0
+FROM node:23.6.1
 
 WORKDIR /usr/local/app
 
 COPY package.json ./
 COPY tsconfig.json ./
+COPY docgen.js ./
 
-RUN yarn install
+RUN yarn
 
 COPY src ./src
-RUN yarn build && yarn add cors
+RUN yarn build
 
 USER root
 RUN apt-get install fontconfig && fc-cache -f -v
