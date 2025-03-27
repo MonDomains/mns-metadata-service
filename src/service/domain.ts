@@ -53,8 +53,7 @@ export async function getDomain(
  
   const newBatch = createBatchQuery('getDomainInfo');
   newBatch.add(queryDocument).add(GET_REGISTRATIONS).add(GET_WRAPPED_DOMAIN);
-
-  console.log(hexId)
+ 
   const domainQueryResult = await request(SUBGRAPH_URL, newBatch.query(), { tokenId: hexId });
  
   const domain = version !== Version.v2 ? domainQueryResult.domains[0] : domainQueryResult.domain;
