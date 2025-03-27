@@ -54,13 +54,14 @@ export async function getDomain(
   const newBatch = createBatchQuery('getDomainInfo');
   newBatch.add(queryDocument).add(GET_REGISTRATIONS).add(GET_WRAPPED_DOMAIN);
 
+  console.log(hexId)
   const domainQueryResult = await request(SUBGRAPH_URL, newBatch.query(), { tokenId: hexId });
  
   const domain = version !== Version.v2 ? domainQueryResult.domains[0] : domainQueryResult.domain;
   if (!(domain && Object.keys(domain).length))
     throw new SubgraphRecordNotFound(`No record for ${hexId}`);
   const { name, createdAt, parent, resolver, id: namehash } = domain;
- 
+   
   /**
    * IMPORTANT
    *
@@ -68,16 +69,16 @@ export async function getDomain(
    * the reason is unfortunately the graph does strip null characters
    * from names, so even though the namehash is different,
    * domains with or without null byte look identical
-   
+   */
   if (getNamehash(name) !== namehash) {
     throw new NamehashMismatchError(
       `TokenID of the query does not match with namehash of ${name}`,
       404
     );
   }
-  */
+  
   const metadata = new Metadata({
-    name: name.replace(".eth", ".mon"),
+    name: name,
     created_date: createdAt,
     tokenId: hexId,
     version,
