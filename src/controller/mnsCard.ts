@@ -19,7 +19,7 @@ export async function mnsCard(req: Request, res: Response) {
   const { name } = req.params;
 
   try {
-    if (!name || name.length < 7 || !name.endsWith('.mon')) {
+    if (!name || name.length < 5 || !name.endsWith('.mon')) {
       throw Error(`${name} is not an MNS name.`);
     }
  
