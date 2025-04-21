@@ -56,7 +56,7 @@ export class AvatarMetadata {
     this.avtResolver = new AvatarResolver(provider, {
       ipfs: IPFS_GATEWAY,
       apiKey: { opensea: OPENSEA_API_KEY },
-      urlDenyList: ['metadata.monadns.com'],
+      urlDenyList: [],
       agents: {
         httpAgent: requestFilterHandler(new http.Agent()),
         httpsAgent: requestFilterHandler(new https.Agent()),
@@ -69,7 +69,7 @@ export class AvatarMetadata {
     let avatarURI;
     try {
       avatarURI = await this.avtResolver.getAvatar(this.uri, {
-        jsdomWindow: window,
+        jsdomWindow: window
       });
     } catch (error: any) {
       if (error instanceof Error) {
