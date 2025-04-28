@@ -110,8 +110,8 @@ yarn test:cov
 | ENV | Project scope | local | local/prod |
 | REDIS_URL | (Optional) Redis connection if you want to enable rate limiter | - | - |
 | INAMEWRAPPER | InterfaceId of NameWrapper Contract | 0xe89c48dc | - |
-| ADDRESS_MON_REGISTRAR | Monad address of MNSBaseRegistrar Contract | 0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D | - |
-| ADDRESS_NAME_WRAPPER | Monad address of NameWrapper Contract | 0x582224b8d4534F4749EFA4f22eF7241E0C56D4B8 | - |
+| ADDRESS_MON_REGISTRAR | Monad address of MNSBaseRegistrar Contract | 0x6C8a8114dA4EED8A2662B4069418e574411A5540 | - |
+| ADDRESS_NAME_WRAPPER | Monad address of NameWrapper Contract | 0x08Ca5c9e59d6Fc12BAb8DBa50825DaE57BBa9932 | - |
 | WEB3_NODE_URL | Monad Node Provider API | - | - |
 | NODE_PROVIDER | Monad Node Provider | Cloudflare | Cloudflare/Google/Infura/Local |
 | NODE_PROVIDER_URL | Monad Node Provider API Endpoint | - | - |
