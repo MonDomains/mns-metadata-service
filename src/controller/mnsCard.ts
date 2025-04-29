@@ -10,7 +10,7 @@ const fontSatoshiBold = importFont(CANVAS_FONT_PATH, 'font/truetype');
 
 path.resolve(process.cwd(), 'fonts', 'fonts.conf');
 path.resolve(process.cwd(), 'fonts', 'Satoshi-Bold.ttf')
-//path.resolve(process.cwd(), 'fonts', 'NotoColorEmoji.ttf')
+path.resolve(process.cwd(), 'fonts', 'NotoColorEmoji.ttf')
 
 const sharp = require("sharp")
 
@@ -80,7 +80,7 @@ export function createCardSVGfromTemplate(name: string) {
         } 
   
         text {
-          font-family: Satoshi, sans-serif;
+          font-family: Satoshi, 'Noto Color Emoji', sans-serif;;
           font-style: normal;
           font-weight: 600 900;
           font-variant-numeric: tabular-nums;
