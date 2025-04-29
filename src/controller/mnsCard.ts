@@ -1,12 +1,17 @@
 import { Request, Response } from 'express'; 
 import { RESPONSE_TIMEOUT } from '../config'; 
 import { ethers } from 'ethers';
-import { createCanvas } from 'canvas';
+import { Canvas, createCanvas, registerFont } from 'canvas';
 import { CANVAS_FONT_PATH }  from '../config';
 import { importFont } from "../utils/importFont";
+import path from 'path'
 
 const fontSatoshiBold = importFont(CANVAS_FONT_PATH, 'font/truetype');
- 
+
+path.resolve(process.cwd(), 'fonts', 'fonts.conf');
+path.resolve(process.cwd(), 'fonts', 'Satoshi-Bold.ttf')
+//path.resolve(process.cwd(), 'fonts', 'NotoColorEmoji.ttf')
+
 const sharp = require("sharp")
 
 export async function mnsCard(req: Request, res: Response) {
@@ -68,14 +73,14 @@ export function createCardSVGfromTemplate(name: string) {
    
     <style type="text/css">
         @font-face { 
-          font-family: "Satoshi Variable";
+          font-family: "Satoshi";
           font-style: normal;
           font-weight: 600 900;
           src: url(${fontSatoshiBold});
         } 
   
         text {
-          font-family: 'Satoshi Variable', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
+          font-family: Satoshi, sans-serif;
           font-style: normal;
           font-weight: 600 900;
           font-variant-numeric: tabular-nums;
@@ -161,8 +166,10 @@ export const getLength = (label: string) => {
 
 export function getFontSize(name: string): number { 
     const canvas = createCanvas(1200, 630, 'svg');
+    registerFont(CANVAS_FONT_PATH, { family: "Satoshi" })
+
     const context = canvas.getContext('2d'); 
-    context.font = "80px Satoshi Variable, Noto Color Emoji, Apple Color Emoji, sans-serif"
+    context.font = "80px Satoshi, Noto Color Emoji, Apple Color Emoji, sans-serif"
     const fontMetrics = context.measureText(name);
     const fontSize = Math.floor(80 * (700 / fontMetrics.width));
     return fontSize > 150 ? 150 : fontSize;

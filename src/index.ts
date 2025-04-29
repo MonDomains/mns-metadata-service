@@ -57,9 +57,9 @@ app.use(
   })
 );
 
-if (process.env.ENV === 'local') {
-  app.use('/assets', express.static(path.join(__dirname, 'assets')));
-}
+//if (process.env.ENV === 'local') {
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+//}
 
 // Apply rate limiting to protect from excessive API requests
 app.use(rateLimitMiddleware);
@@ -75,7 +75,7 @@ endpoints(app);
 app.use(malformedURIMiddleware);
 
 // Compress responses to improve performance, unless explicitly disabled
-app.use(compression);
+app.use(compression({ filter: shouldCompress }));
 
 // Function to determine whether to compress a response
 function shouldCompress(req: Request, res: Response) {
@@ -85,7 +85,7 @@ function shouldCompress(req: Request, res: Response) {
   }
 
   // Default to standard compression filter
-  //return compression.filter(req, res);
+  return compression.filter(req, res);
 }
 
 const PORT = process.env.PORT || 8080;
@@ -95,7 +95,9 @@ app.listen(PORT, () => {
 });
 
 // Handle requests for browsers default favicon.ico with a quick 204 response
-app.get('/favicon.ico', (_, res) => res.status(204).end());
+app.get('/favicon.ico', (req: Request, res: Response) => {
+  res.status(204).end()
+});
 
 // Serve API documentation using ReDoc
 app.get(
