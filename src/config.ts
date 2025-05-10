@@ -8,6 +8,7 @@ const REDIS_URL = process.env.REDIS_URL;
 
 const FONT_FOLDER = path.join((ENV === 'local' ? 'src' : 'dist'), 'assets');
 const CANVAS_FONT_PATH = path.join(FONT_FOLDER, 'Satoshi-Bold.ttf');
+const CARD_BG_PATH = path.join(FONT_FOLDER, 'card-bg.png');
 const CANVAS_EMOJI_FONT_PATH = path.join(FONT_FOLDER, 'NotoColorEmoji.ttf');
 const INAMEWRAPPER = process.env.INAMEWRAPPER || '0xd82c42d8';
 
@@ -60,5 +61,6 @@ export {
   NODE_PROVIDER_URL_TESTNET,
   RESPONSE_TIMEOUT,
   SERVER_URL,
-  THE_GRAPH_API_KEY
+  THE_GRAPH_API_KEY,
+  CARD_BG_PATH
 };

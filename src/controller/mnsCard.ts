@@ -2,11 +2,12 @@ import { Request, Response } from 'express';
 import { RESPONSE_TIMEOUT } from '../config'; 
 import { ethers } from 'ethers';
 import { Canvas, createCanvas, registerFont } from 'canvas';
-import { CANVAS_FONT_PATH }  from '../config';
+import { CANVAS_FONT_PATH, CARD_BG_PATH }  from '../config';
 import { importFont } from "../utils/importFont";
 import path from 'path'
 
 const fontSatoshiBold = importFont(CANVAS_FONT_PATH, 'font/truetype');
+
 
 path.resolve(process.cwd(), 'fonts', 'fonts.conf');
 path.resolve(process.cwd(), 'fonts', 'Satoshi-Bold.ttf')
@@ -22,13 +23,14 @@ export async function mnsCard(req: Request, res: Response) {
   });
 
   const { name } = req.params;
+  const label = name.split(".").shift() || "";
+  const oname = obscureName(label, 25) + ".mon";
 
   try {
     if (!name || name.length < 5 || !name.endsWith('.mon')) {
       throw Error(`${name} is not an MNS name.`);
     }
- 
-      
+  
     const svg = createCardSVGfromTemplate(name);
     const svgBuffer = Buffer.from(svg);
     const image = await sharp({
@@ -37,11 +39,23 @@ export async function mnsCard(req: Request, res: Response) {
             height: 630,
             channels: 4,
             rgba: true,
-            background: { r: 255, g: 255, b: 255, alpha: 1 },
+            background: { r: 3, g: 1, b: 20, alpha: 1 },
         }
-    }).composite([{
-        input: svgBuffer
-    }]).jpeg({ quality: 100, progressive: true }).toBuffer();
+    }).composite([{ 
+      input: path.resolve(CARD_BG_PATH)
+    },
+      {
+        input: { 
+          text: { 
+            text: `<span size="${getFontSize(oname)}pt" foreground='#ffffff'>${oname}</span>`, 
+            align: "center", 
+            font: "Satoshi Bold",
+            fontfile: path.resolve(CANVAS_FONT_PATH),
+            rgba: true,
+          }
+        }
+      }
+  ]).jpeg({ quality: 100, progressive: true }).toBuffer();
 
     
     res.writeHead(200, {
@@ -80,7 +94,7 @@ export function createCardSVGfromTemplate(name: string) {
         } 
   
         text {
-          font-family: Satoshi, 'Noto Color Emoji', sans-serif;;
+          font-family: Satoshi, 'Noto Color Emoji', sans-serif;
           font-style: normal;
           font-weight: 600 900;
           font-variant-numeric: tabular-nums;
@@ -172,5 +186,5 @@ export function getFontSize(name: string): number {
     context.font = "80px Satoshi, Noto Color Emoji, Apple Color Emoji, sans-serif"
     const fontMetrics = context.measureText(name);
     const fontSize = Math.floor(80 * (700 / fontMetrics.width));
-    return fontSize > 150 ? 150 : fontSize;
+    return fontSize > 300 ? 300 : fontSize;
 }
