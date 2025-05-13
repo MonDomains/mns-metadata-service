@@ -121,7 +121,7 @@ const doc = {
           },
         ],
         name_length: 4,
-        url: 'https://app.monadns.com/name/nick.mon',
+        url: 'https://dapp.monadns.com/name/nick.mon',
         version: 0,
         background_image:
           'https://metadata.monadns.com/monad/avatar/nick.mon',

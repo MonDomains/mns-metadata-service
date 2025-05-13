@@ -68,9 +68,10 @@ export class AvatarMetadata {
   async getImage(): Promise<[Buffer, string]> {
     let avatarURI;
     try {
-      avatarURI = await this.avtResolver.getAvatar(this.uri, {
-        jsdomWindow: window
-      });
+      //avatarURI = await this.avtResolver.getAvatar(this.uri, {
+      //  jsdomWindow: window
+      //}); 
+      avatarURI = await this.defaultProvider.getAvatar(this.uri);
     } catch (error: any) {
       if (error instanceof Error) {
         console.log(`${this.uri} - error:`, error.message);

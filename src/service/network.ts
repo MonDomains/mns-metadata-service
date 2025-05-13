@@ -1,4 +1,4 @@
-import { JsonRpcProvider, Network } from 'ethers';
+import { EnsPlugin, JsonRpcProvider, Network } from 'ethers';
 import { UnsupportedNetwork } from '../base';
 import {
   NODE_PROVIDER,
@@ -6,6 +6,7 @@ import {
   NODE_PROVIDER_URL_TESTNET,
   NODE_PROVIDER_URL_CF,
   THE_GRAPH_API_KEY,
+  ADDRESS_MON_REGISTRY,
 } from '../config';
 
 const NODE_PROVIDERS = {
@@ -20,11 +21,14 @@ export const NETWORK = {
 
 export type NetworkName = (typeof NETWORK)[keyof typeof NETWORK];
 
-export const monadMainnet = new Network(NETWORK.MAINNET, 10143);
 export const monadTestnet = new Network(NETWORK.TESTNET, 10143);
+export const monadMainnet = new Network(NETWORK.MAINNET, 10143);
+ 
+monadTestnet.attachPlugin(new EnsPlugin(ADDRESS_MON_REGISTRY, Number(monadTestnet.chainId)));
+monadMainnet.attachPlugin(new EnsPlugin(ADDRESS_MON_REGISTRY, Number(monadMainnet.chainId)));
 
-Network.register(NETWORK.MAINNET, ()=> monadMainnet);
 Network.register(NETWORK.TESTNET, ()=> monadTestnet);
+Network.register(NETWORK.MAINNET, ()=> monadMainnet);
 
 function getWeb3URL(
   providerName: string,
@@ -59,16 +63,16 @@ export default function getNetwork(network: NetworkName): {
       SUBGRAPH_URL = 
         ``;
       break;
-    default:
-      throw new UnsupportedNetwork(`Unknown network '${network}'`, 501);
+    //default:
+      //throw new UnsupportedNetwork(`Unknown network '${network}'`, 501);
   }
 
   const WEB3_URL = getWeb3URL(NODE_PROVIDER, NODE_PROVIDER_URL, network);
  
   // add source param at the end for better request measurability
   SUBGRAPH_URL = SUBGRAPH_URL + '?source=mns-metadata';
-  
-  const provider = new JsonRpcProvider(WEB3_URL, network, { staticNetwork: true });
    
+  const provider = new JsonRpcProvider(WEB3_URL, network, { staticNetwork: true });
+     
   return { WEB3_URL, SUBGRAPH_URL, provider };
 }

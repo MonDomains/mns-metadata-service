@@ -57,7 +57,7 @@ https://metadata.monadns.com/monad/0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D/42
   ],
   "name_length": 4,
   "segment_length": 4,
-  "url": "https://app.monadns.com/name/nick.mon",
+  "url": "https://dapp.monadns.com/name/nick.mon",
   "version": 0,
   "background_image": "https://metadata.monadns.com/monad/avatar/nick.mon",
   "image": "https://metadata.monadns.com/monad/0x01BeCD733ea490CCDa8B5Caa97381E67BFA5249D/0x5d5727cb0fb76e4944eafb88ec9a3cf0b3c9025a4b2f947729137c5d7f84f68f/image",

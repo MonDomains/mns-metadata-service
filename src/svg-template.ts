@@ -40,7 +40,6 @@ export default function createSVGfromTemplate({
         <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.225" width="200%" height="200%"/>
       </filter>
     </defs>
-    ${logoSvg}
     ${chainLogoSvg}
     ${
       isNormalized
