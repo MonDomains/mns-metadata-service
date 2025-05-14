@@ -21,7 +21,7 @@ export async function mnsCard(req: Request, res: Response) {
 
   const { name } = req.params;
   const label = name.split(".").shift() || "";
-  const oname = obscureName(label, 15) + ".mon";
+  const oname = obscureName(label, 20) + ".mon";
   const cardWidth = 1200;
   const cardHeight = 630;
   const avatarWidth = 270;
@@ -102,7 +102,7 @@ export async function mnsCard(req: Request, res: Response) {
       left: avatarWidth + leftSpacing + spacing,
       input: { 
         text: { 
-          text: `<span size="75pt" foreground='#ffffff'>${oname}</span>`, 
+          text: `<span size="${getFontSize(oname)}pt" foreground='#ffffff'>${oname}</span>`, 
           font: "Satoshi Bold",
           fontfile: path.resolve(CANVAS_FONT_PATH),
           rgba: true,
