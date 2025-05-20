@@ -21,7 +21,7 @@ export async function mnsCard(req: Request, res: Response) {
 
   const { name } = req.params;
   const label = name.split(".").shift() || "";
-  const oname = obscureName(label, 20) + ".mon";
+  const oname = obscureName(label, 15) + ".mon";
   const cardWidth = 1200;
   const cardHeight = 630;
   const avatarWidth = 270;
@@ -83,7 +83,7 @@ export async function mnsCard(req: Request, res: Response) {
     if(avatarPicBuffer != null) {
       const input_avatar = {
         input: avatarPicBuffer,
-        top: (cardHeight / 2) - (avatarHeight / 2),
+        top: Math.floor((cardHeight / 2) - (avatarHeight / 2)),
         left: 50
       }
       _composites.push(input_avatar)
@@ -98,11 +98,11 @@ export async function mnsCard(req: Request, res: Response) {
 
    
     const input_name = {
-      top: Math.floor((cardHeight / 2)) - 30,
+      top: Math.floor((cardHeight / 2) - (avatarHeight / 2)) + 10,
       left: avatarWidth + leftSpacing + spacing,
       input: { 
         text: { 
-          text: `<span size="${getFontSize(oname)}pt" foreground='#ffffff'>${oname}</span>`, 
+          text: `<span size="74pt" foreground='#ffffff'>${oname}</span>`, 
           font: "Satoshi Bold",
           fontfile: path.resolve(CANVAS_FONT_PATH),
           rgba: true,
